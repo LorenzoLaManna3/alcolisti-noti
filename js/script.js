@@ -1,0 +1,140 @@
+//funzione per far funzionare l'hamburger e il banner 
+
+let phonebannertot = document.querySelector(".phonebannertot");
+
+let hamburger = document.querySelector(".hamburger");
+let closebanner = document.querySelector(".closebanner");
+
+hamburger.onclick = function () {
+    phonebannertot.classList.add("showbanner");
+    console.log('mostra banner')
+};
+
+closebanner.onclick = function () {
+    phonebannertot.classList.remove("showbanner");
+    console.log('nascondi banner')
+};
+
+// Per far funzionare le modali:
+
+let modals = document.querySelectorAll(".modal");
+let modalcnt = modals.length; //per prendere  il numero di elementi (i div in pratica) dentro il div con classe modals
+console.log("childcounter" + modalcnt); //sciviamo modalcnt nella console
+
+
+let pre = document.querySelector(".pre"); //variabile per il bottone pre
+let next = document.querySelector(".next"); //variabile per il bottone next
+
+
+let completemodal = document.querySelector(".completemodal"); // varibile contnenete la section con tutti gli elementi della modale (sfondo, freccie...)
+
+const allcard = document.querySelectorAll(".card"); //stringa per tutte le card
+
+// per fa funsionare le card come pulsanti
+
+let itemId = ""; //variabile che conterra l'id della card che viene cliccata
+
+allcard.forEach(card => {  //per ogni card
+    card.addEventListener('click', function () {  //percepire quando una card viene cliccata
+        if (this.id) { // "se la carda ha un id"
+            itemId = this.id; //prendere l'id di quella card
+            console.log("Selected ID:", itemId); //sciviamo nella console id della card appena cliccato
+            mostramodale(); //attiva questa funzione (è sotto) per mostrare la modale
+            verificafreccia(); //attiva questa funzione (è in fondo) per verificare le visibilità delle freccie
+        } else {
+            console.log("Nessun div"); // Messaggio se non c'è un ID
+        };
+    });
+});
+
+// funzione per mostrare la modale 
+
+function mostramodale() {
+    Rimuovimodali ();
+    const stessoid = document.querySelector(`.modals #${itemId}`); // prendiamo la modale con lo stesso id
+    stessoid.classList.add("showmodal"); //mostriamo la modale
+};
+
+// funzione per far funzionare il tasto di chiusura
+
+let close = document.querySelector(".close");
+
+close.onclick = function () { // per chiudere
+    Rimuovimodali ();
+    completemodal.classList.remove("showcompletemodal");
+};
+
+
+// funzione per far funzionare le freccie
+
+pre.onclick = function () { //se cliccli pre attiva esegui funzione
+    const showElement = document.querySelector('.showmodal');  // inserire nella variabile la modale visibile
+    const posizione = Array.from(modals).indexOf(showElement); // prendere la posizone numerica della modale visibile dentro il gruppo delle modali
+    console.log(posizione);
+    const preId = posizione - 1; //diminuisco per prednere il valore della variabile precedente
+    console.log(preId);
+    if (preId >= 0) { //se la posizione della prossima modale è maggiore o uguale a 0...
+        Rimuovimodali ();
+        const premodal = modals[preId]; // selezionare la modale con la nuova posizione e...
+        premodal.classList.add("showmodal"); //...renderla visibile
+        if (preId == 0) { //se la posizione è la prima disponible
+            console.log('prima modale');
+            pre.classList.add("frecciainvisibile"); //rendere invisibile la freccia pre
+        } else {
+            next.classList.remove("frecciainvisibile"); //rendere visibile la freccia next
+        };
+    } else {
+        console.log('nessuna modale precedente');
+    };
+};
+
+next.onclick = function () {  //se cliccli next attiva esegui funzione
+    const showElement = document.querySelector('.showmodal'); // inserire nella variabile la modale visibile
+    const posizione = Array.from(modals).indexOf(showElement); // prendere la posizone numerica della modale visibile dentro il gruppo delle modali
+    console.log(posizione);
+    const nextId = posizione + 1; //aumento per prednere il valore della prossima variabile
+    console.log(nextId);
+    if (nextId < modalcnt) { //se la posizione della prossima modale è minore della quantità delle modali...
+        Rimuovimodali ();
+        const premodal = modals[nextId]; // selezionare la modale con la nuova posizione e...
+        premodal.classList.add("showmodal"); //...renderla visibile
+        if (nextId == (modalcnt - 1)) { //se la posizione è l'ultima disponibile
+            console.log('ultima modale');
+            next.classList.add("frecciainvisibile"); //rendere invisibile la freccia next
+        } else {
+            pre.classList.remove("frecciainvisibile"); //rendere visibile la freccia pre
+        };
+    } else {
+        console.log('nessuna modale succesiva')
+    };
+};
+
+// funzione per verificare se le freccie devono essere visibili o meno
+
+function verificafreccia() {
+    completemodal.classList.add("showcompletemodal");//per mostrare la section citata precedentemente
+    const showElement = document.querySelector('.showmodal');  // inserire nella variabile la modale visibile
+    const posizione = Array.from(modals).indexOf(showElement); // prendere la posizone numerica della modale visibile dentro il gruppo delle modali
+    console.log(posizione);
+    if (posizione == 0) {  //se la posizione è la prima
+        console.log('prima modale');
+        pre.classList.add("frecciainvisibile"); //rendere invisibile la freccia pre
+    } else {
+        pre.classList.remove("frecciainvisibile"); //rendere visibile la freccia next
+    };
+    if (posizione == (modalcnt - 1)) { //se la posizione è l'ultima disponibile
+        console.log('prima modale');
+        next.classList.add("frecciainvisibile"); //rendere invisibile la freccia pre
+    } else {
+        next.classList.remove("frecciainvisibile"); //rendere visibile la freccia next
+    };
+};
+
+// funzione per nascondere ogni modale (no completemodal)
+
+function Rimuovimodali() {
+    for (let b = 0; b < modalcnt; b++) { //per rimuovere la visibilità a tutte le modali
+        modals[b].classList.remove("showmodal");
+    };
+};
+

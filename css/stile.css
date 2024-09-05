@@ -1,0 +1,694 @@
+/* variabili-stili */
+
+:root {
+    --color1: rgb(255, 255, 255);
+    --color2: rgb(0, 0, 0);
+    --color3: rgba(0, 0, 0, 0.75);
+    --color4: rgb(196, 16, 16);
+    --bordradius1: 20px;
+    --heightheader: 60px;
+    /* su figma 92 */
+    --horizontalpadding: 40px;
+    --verticalpadding: 80px;
+    /* su figma 120*/
+    --gap1: 20px;
+    /* gap delle card */
+    --realviewidth: calc(100vw - (100vw - 100%));
+    /*questo valore è uguale al valore 100% width che ha body, non usarlo per sottofigli */
+    --transitionIN1: 1500ms;
+    --transitionOUT1: 750ms;
+    --fontmedium: 500;
+    --fontbold: 700;
+    --h1size: 50px;
+    /* è 78 su figma - Usato anche per le card con immagini */
+    --h3size: 27px;
+    /* 40 su figma */
+    --textsize: 16px;
+    /*24 su figma */
+    --modaletextsize: 14px;
+    /* 16 su figma */
+    --lineheight: 150%;
+}
+
+body,
+main {
+    background-color: var(--color2);
+    max-width: var(--realviewidth);
+    /* stessa cosa di avere 100% */
+    gap: 0;
+    margin: 0 auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body:-webkit-any-link {
+    cursor: pointer;
+    /*per il cursore in ogni link*/
+}
+
+p,
+h1,
+h2,
+h3,
+a,
+.text {
+    font-family: 'General Sans', sans-serif;
+    margin: 0 0;
+}
+
+b {
+    font-weight: 700;
+}
+
+/* header e footer */
+
+header,
+footer {
+    width: var(--realviewidth);
+    position: relative;
+    z-index: 2;
+}
+
+footer {
+    padding-top: var(--verticalpadding);
+}
+
+header section,
+footer section {
+    max-width: 1000px;
+    height: var(--heightheader);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--horizontalpadding);
+    top: 0;
+}
+
+nav {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 35px;
+}
+
+li {
+    display: list-item;
+    unicode-bidi: isolate;
+    position: relative;
+    /*per far funzionare l'absolute del banner sottostante */
+}
+
+header a,
+footer a {
+    text-decoration: none;
+    /*per levare il sottolineato*/
+    color: var(--color1);
+    font-size: var(--textsize);
+    font-weight: var(--fontmedium);
+    opacity: 75%;
+}
+
+header ul a,
+footer ul a {
+    font-size: var(--textsize) !important;
+}
+
+header a:hover,
+footer a:hover {
+    opacity: 100%;
+}
+
+/* banner */
+
+li:hover .banner {
+    display: block;
+}
+
+.banner {
+    display: none;
+    position: absolute;
+    top: calc(100% + 16px);
+    /*questo valore si / può modicare */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.forhover {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    opacity: 0%;
+    bottom: 100%;
+    height: var(--heightheader);
+}
+
+.banner svg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%;
+    height: 10px;
+}
+
+.banner svg path {
+    fill: var(--color1);
+}
+
+.banner div {
+    gap: var(--horizontalpadding);
+    background-color: var(--color1);
+    display: inline-flex;
+    padding: 16px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: var(--bordradius1);
+}
+
+.banner div a,
+.phonebanner a {
+    font-size: var(--textsize);
+    color: var(--color3);
+}
+
+.banner div a:hover,
+.phonebanner a:hover {
+    font-size: var(--textsize);
+    color: var(--color2);
+}
+
+/* hero */
+
+.hero {
+    height: calc(100vh - var(--heightheader));
+    position: relative;
+    margin: auto auto;
+    max-width: 1000px;
+    padding: 0 var(--horizontalpadding);
+    /*da sistemare*/
+    display: grid;
+    pointer-events: none;
+    /*se no non funziona hover e link del banner */
+}
+
+.testohero {
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+h1,
+h2 {
+    color: var(--color1);
+}
+
+.testohero h1,
+.sottotitolohero {
+    position: absolute;
+}
+
+.testohero h1 {
+    top: 80px;
+    line-height: 100%;
+    letter-spacing: -2.2%;
+    /*su figma era 120*/
+}
+
+.sottotitolohero {
+    top: 300px;
+    /*su figma era 438*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--horizontalpadding);
+    width: 300px;
+    /* 400 su figma */
+}
+
+h1 {
+    font-size: var(--h1size);
+    font-weight: var(--fontbold);
+    text-transform: uppercase;
+}
+
+
+h2 {
+    font-size: 20px;
+    /* 31 su figma */
+    font-weight: var(--fontmedium);
+    font-style: italic;
+    line-height: var(--lineheight);
+}
+
+/*sfondo hero */
+
+.sfondohero {
+    position: absolute;
+    /* FORSE VA MESSO QUALCOSA PER RENDERE L'IMMAGINE SERPRE CENTRALE */
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    height: 100%;
+    width: 100vw;
+    z-index: 1;
+    overflow: hidden;
+    /* per rendere invisibile la parte dell'immagine non interna al div */
+}
+
+.sfondohero img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: center center;
+    transform-origin: center;
+    object-position: center;
+    /* Centra l'immagine */
+    display: block;
+}
+
+/*main*/
+
+.element {
+    max-width: 1000px;
+    margin: auto auto;
+    padding: var(--verticalpadding) var(--horizontalpadding);
+    padding-bottom: 0;
+    /*da sistemare*/
+    display: grid;
+    gap: 40px 40px;
+}
+
+.text {
+    display: grid;
+    gap: var(--gap1) var(--gap1);
+    color: var(--color1);
+    max-width: calc(100% / 4 * 3);
+    margin: auto, auto;
+    position: relative;
+    left: calc(100% / 12);
+}
+
+h3 {
+    font-size: var(--h3size);
+    font-weight: var(--fontbold);
+    text-transform: uppercase;
+}
+
+.text p {
+    font-size: var(--textsize);
+    font-weight: var(--fontmedium);
+    line-height: var(--lineheight);
+}
+
+/*card con immagini*/
+
+.cards {
+    display: grid;
+    /* provare block*/
+    align-items: center;
+    margin: auto auto;
+    gap: var(--gap1) 0px;
+    width: 100%;
+}
+
+.rigacards {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px var(--gap1);
+}
+
+.card {
+    cursor: pointer;
+    display: grid;
+    gap: 0px 0px;
+    flex: 1;
+    overflow: hidden;
+    /* per rendere invisibile la parte dell'immagine non interna al div */
+    border-radius: var(--bordradius1);
+    align-items: stretch;
+    aspect-ratio: 1 / 1.5;
+    /* ASPECT RATIO DA DECIDERE, (OPPURE DECIDERE UN ALTEZZA FISSA, anche in base allo scherm0) */
+    position: relative;
+    /* senza questo (position:relative) non funzionerebbe la posizione absolute del testo è relativa in termnini di top-left alla card e non all'intera pagina */
+}
+
+
+.bigcard {
+    aspect-ratio: 2 / 1 !important;
+    /* ASPECT RATIO DA DECIDERE, (OPPURE DECIDERE UN ALTEZZA FISSA, anche in base allo schermo) */
+}
+
+.imgcard {
+    object-fit: cover;
+    object-position: center center;
+    z-index: 2;
+    transform: scale(1, 1);
+    transition: 1500ms;
+    transform-origin: center;
+}
+
+.rigacards img {
+    width: 100%;
+    height: 100%;
+}
+
+.bigcard img {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.card:hover img {
+    transform: scale(1.10);
+    transition-duration: 750ms;
+    overflow: hidden;
+}
+
+.testocard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    display: grid;
+    text-align: center;
+    align-items: center;
+    margin: auto auto;
+    color: var(--color1);
+    width: 100%;
+    z-index: 3;
+    font-size: var(--h1size);
+    font-weight: var(--fontbold);
+    text-transform: uppercase;
+}
+
+.invisiblecard {
+    /*card invisibili occupa posto, quando in una riga si trova solo 1 o 2 card */
+    opacity: 0%;
+    color: rgba(255, 0, 0, 0);
+    pointer-events: none;
+}
+
+.half {
+    /* mezza card invisibile */
+    flex: 0.5;
+}
+
+.specialcard {
+    /*classe per le card quado dolo solo2 in una riga */
+    flex: 1 var(--gap1) !important;
+    /*stesso valore del gap */
+}
+
+/* card solo testo */
+
+.sottocategorie .card {
+    background-color: var(--color1);
+    aspect-ratio: auto;
+    /*per distinguerlo dalle card grandi */
+}
+
+.sottocategorie p {
+    padding: 16px;
+    color: var(--color3);
+    font-size: var(--textsize);
+    font-weight: var(--fontbold);
+    position: static;
+    transform: none;
+    /*per distinguerlo dalle card grandi */
+    width: auto;
+}
+
+.sottocategorie .card:hover p {
+    color: var(--color2);
+}
+
+/* modale tot */
+
+.completemodal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: var(--color3);
+    justify-content: center;
+    align-items: center;
+    gap: 0 16px;
+}
+
+.showcompletemodal {
+    display: flex;
+}
+
+/*singola modale */
+
+.modals {
+    flex-shrink: 0;
+    width: 500px;
+    aspect-ratio: 1 / 1;
+}
+
+.modal {
+    display: none;
+    z-index: 6;
+    background-color: var(--color1);
+    height: 100%;
+    border-radius: var(--bordradius1);
+    padding: 16px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex-shrink: 0;
+    /* da controllare */
+}
+
+
+.showmodal {
+    display: flex;
+}
+
+.headermodale {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.headermodale div {
+    display: flex;
+    align-items: center;
+    /*per allineare al testo */
+    gap: 16px;
+    border-radius: var(--bordradius1);
+}
+
+.titolomodale {
+    font-size: var(--h3size);
+    font-weight: var(--fontbold);
+    text-transform: uppercase;
+    color: var(--color3);
+    /* 0.80 su figma */
+}
+
+.headermodale svg,
+.headermodale img {
+    height: 20px;
+}
+
+.headermodale svg path {
+    fill: var(--color3);
+}
+
+.testomodale {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.testomodale p {
+    align-self: stretch;
+    color: var(--color3);
+    font-size: var(--modaletextsize);
+    font-weight: var(--fontmedium);
+    line-height: var(--lineheight);
+    /*
+    text-transform: uppercase;*/
+}
+
+/* Pulsanti pre next e next*/
+
+.close,
+.closebanner,
+.pre,
+.next {
+    cursor: pointer;
+}
+
+.closeplusnext {
+    display: flex;
+    height: 500px;
+    /*uguale alla modale !!!*/
+    padding: 16px 0px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.pre,
+.next,
+.close,
+.closebanner {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.pre svg,
+.next svg,
+.close svg,
+.closebanner svg {
+    height: 20px;
+}
+
+.pre svg path,
+.next svg path {
+    fill: var(--color1);
+}
+
+.pre svg {
+    rotate: 180deg;
+}
+
+.frecciainvisibile {
+    opacity: 0%;
+    pointer-events: none;
+}
+
+/* banner con hamburger ( dimensioni phone ) */
+
+.phonebannertot {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: var(--color3);
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.showbanner {
+    display: flex;
+}
+
+.phonebanner {
+    background-color: var(--color1);
+    display: flex;
+    padding: 0px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.contenitorclose {
+    display: flex;
+    height: var(--heightheader);
+    justify-content: flex-end;
+    align-items: center;
+    align-self: stretch;
+}
+
+.testophonebanner {
+    display: flex;
+    padding: 20px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.testophonebanner, .testophonebanner a {
+    text-decoration: none;
+    /*per levare il sottolineato*/
+    font-size: var(--textsize);
+    font-weight: var(--fontmedium);
+}
+
+.hamburger {
+    display: none;
+}
+
+/* Gradient bevande */
+
+.gradient {
+    width: 122px;
+    height: 25px;
+}
+
+.grchiare1 {
+    background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #BB8700 100%);
+}
+
+.grchiare2 {
+    background: linear-gradient(270deg, #D26500 0%, #D17621 50%, #E6A600 100%);
+}
+
+.grchiare3 {
+    background: linear-gradient(90deg, #211800 0%, #BC8700 50%, #BB8700 100%);
+}
+
+.grchiare4 {
+    background: linear-gradient(0deg, #FFB800 0%, #FFB800 100%);
+}
+
+.grchiare5 {
+    background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 69.5%);
+}
+
+.grchiare6 {
+    background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #FAB400 100%);
+}
+
+.grchiare7 {
+    background: linear-gradient(90deg, #F9BB1C 0%, #FF4D00 100%);
+}
+
+.grchiare8 {
+    background: linear-gradient(90deg, #FF7A36 0%, #F9861C 50%, #BB8700 100%);
+    /*background: linear-gradient(270deg, #D26500 0%, #D17621 50%, #E6A600 100%);*/
+}
+
+.grchiare9 {
+    background: linear-gradient(90deg, #FF5402 0%, #A04300 50%, #4D3801 100%);
+}
+
+.grchiare10 {
+    background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #BB8700 100%);
+}
+
+/* responsive */
+
+@media (max-width:600px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+}
