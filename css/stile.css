@@ -622,7 +622,8 @@ h3 {
     gap: 20px;
 }
 
-.testophonebanner, .testophonebanner a {
+.testophonebanner,
+.testophonebanner a {
     text-decoration: none;
     /*per levare il sottolineato*/
     font-size: var(--textsize);
@@ -688,7 +689,48 @@ h3 {
         display: block;
     }
 
-    nav {
+    header nav {
         display: none;
+    }
+
+    .sfondohero img {
+        object-position: 50%;
+    }
+
+    .rigacards {
+        flex-direction: column;
+        gap: var(--gap1) 0px;
+    }
+
+    .rigaspecial {
+        gap: 0px 0px;
+    }
+
+    .invisiblecard {
+        display: none;
+    }
+
+    .specialcard {
+        flex: 1 !important;
+    }
+
+    .card:focus img, .card:active img {
+        transform: scale(1.10);
+        transition-duration: 750ms;
+        overflow: hidden;
+    }
+
+
+    .modals {
+        width: 75vw;
+        aspect-ratio: 1 / 2;
+    }
+
+    .closeplusnext {
+        height: calc(75vw * 2);
+    }
+
+    .gradient {
+        width: 50px;
     }
 }
