@@ -1,24 +1,24 @@
 //funzione per far funzionare l'hamburger e il banner 
 
-let phonebannertot = document.querySelector(".phonebannertot");
+let phonebannertot = document.querySelector(".phonebannertot");  //var per contenere il banner completo
 
-let hamburger = document.querySelector(".hamburger");
-let closebanner = document.querySelector(".closebanner");
+let hamburger = document.querySelector(".hamburger"); //var per l'icona hamburger
+let closebanner = document.querySelector(".closebanner"); //var per il pulsante X
 
-hamburger.onclick = function () {
-    phonebannertot.classList.add("showbanner");
-    console.log('mostra banner')
+hamburger.onclick = function () { //cliccando l'icona si attiva questa funzione
+    phonebannertot.classList.add("showbanner"); //aggiungi la classe "showbanner" al banner per mostrarlo
+    console.log('mostra banner') //console.log = scrivi nella console
 };
 
-closebanner.onclick = function () {
+closebanner.onclick = function () { 
     phonebannertot.classList.remove("showbanner");
     console.log('nascondi banner')
 };
 
 // Per far funzionare le modali:
 
-let modals = document.querySelectorAll(".modal");
-let modalcnt = modals.length; //per prendere  il numero di elementi (i div in pratica) dentro il div con classe modals
+let modals = document.querySelectorAll(".modal"); //stringa per contenere tutte le modali
+let modalcnt = modals.length; //per prendere  il numero delle modali (lenght = lunghezza della stringa)
 console.log("childcounter" + modalcnt); //sciviamo modalcnt nella console
 
 
@@ -35,13 +35,13 @@ const allcard = document.querySelectorAll(".card"); //stringa per tutte le card
 let itemId = ""; //variabile che conterra l'id della card che viene cliccata
 
 allcard.forEach(card => {  //per ogni card
-    card.addEventListener('click', function () {  //percepire quando una card viene cliccata
+    card.addEventListener('click', function () {  //percepire quando una card viene cliccata e attivare la funzione
         if (this.id) { // "se la carda ha un id"
             itemId = this.id; //prendere l'id di quella card
             console.log("Selected ID:", itemId); //sciviamo nella console id della card appena cliccato
             mostramodale(); //attiva questa funzione (è sotto) per mostrare la modale
             verificafreccia(); //attiva questa funzione (è in fondo) per verificare le visibilità delle freccie
-        } else {
+        } else { // oppure
             console.log("Nessun div"); // Messaggio se non c'è un ID
         };
     });
@@ -60,7 +60,7 @@ function mostramodale() {
 let close = document.querySelector(".close");
 
 close.onclick = function () { // per chiudere
-    Rimuovimodali ();
+    Rimuovimodali (); //richiama a questa funzine (alla fine)
     completemodal.classList.remove("showcompletemodal");
 };
 
@@ -69,7 +69,7 @@ close.onclick = function () { // per chiudere
 
 pre.onclick = function () { //se cliccli pre attiva esegui funzione
     const showElement = document.querySelector('.showmodal');  // inserire nella variabile la modale visibile
-    const posizione = Array.from(modals).indexOf(showElement); // prendere la posizone numerica della modale visibile dentro il gruppo delle modali
+    const posizione = Array.from(modals).indexOf(showElement); // prendere la posizone numerica della modale visibile dentro la stringa delle modali
     console.log(posizione);
     const preId = posizione - 1; //diminuisco per prednere il valore della variabile precedente
     console.log(preId);
@@ -133,8 +133,7 @@ function verificafreccia() {
 // funzione per nascondere ogni modale (no completemodal)
 
 function Rimuovimodali() {
-    for (let b = 0; b < modalcnt; b++) { //per rimuovere la visibilità a tutte le modali
-        modals[b].classList.remove("showmodal");
+    for (let b = 0; b < modalcnt; b++) { //ciclo che va da zero a "modalcnt" (numero delle modali): la "b" aumenta progressivamente di uno
+        modals[b].classList.remove("showmodal"); //rimuve la classse "showmaodal" alla modale con posizione "b" quindi finendo tutti i cicli saranno tutte invisibili
     };
 };
-
