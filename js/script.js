@@ -10,7 +10,7 @@ hamburger.onclick = function () { //cliccando l'icona si attiva questa funzione
     console.log('mostra banner') //console.log = scrivi nella console
 };
 
-closebanner.onclick = function () { 
+closebanner.onclick = function () {
     phonebannertot.classList.remove("showbanner");
     console.log('nascondi banner')
 };
@@ -50,7 +50,7 @@ allcard.forEach(card => {  //per ogni card
 // funzione per mostrare la modale 
 
 function mostramodale() {
-    Rimuovimodali ();
+    Rimuovimodali();
     const stessoid = document.querySelector(`.modals #${itemId}`); // prendiamo la modale con lo stesso id
     stessoid.classList.add("showmodal"); //mostriamo la modale
 };
@@ -60,7 +60,7 @@ function mostramodale() {
 let close = document.querySelector(".close");
 
 close.onclick = function () { // per chiudere
-    Rimuovimodali (); //richiama a questa funzine (alla fine)
+    Rimuovimodali(); //richiama a questa funzine (alla fine)
     completemodal.classList.remove("showcompletemodal");
 };
 
@@ -68,13 +68,21 @@ close.onclick = function () { // per chiudere
 // funzione per far funzionare le freccie
 
 pre.onclick = function () { //se cliccli pre attiva esegui funzione
+    indietro();
+};
+
+next.onclick = function () {  //se cliccli next attiva esegui funzione
+    avanti();
+};
+
+function indietro() {
     const showElement = document.querySelector('.showmodal');  // inserire nella variabile la modale visibile
     const posizione = Array.from(modals).indexOf(showElement); // prendere la posizone numerica della modale visibile dentro la stringa delle modali
     console.log(posizione);
     const preId = posizione - 1; //diminuisco per prednere il valore della variabile precedente
     console.log(preId);
     if (preId >= 0) { //se la posizione della prossima modale è maggiore o uguale a 0...
-        Rimuovimodali ();
+        Rimuovimodali();
         const premodal = modals[preId]; // selezionare la modale con la nuova posizione e...
         premodal.classList.add("showmodal"); //...renderla visibile
         if (preId == 0) { //se la posizione è la prima disponible
@@ -88,14 +96,14 @@ pre.onclick = function () { //se cliccli pre attiva esegui funzione
     };
 };
 
-next.onclick = function () {  //se cliccli next attiva esegui funzione
+function avanti() {
     const showElement = document.querySelector('.showmodal'); // inserire nella variabile la modale visibile
     const posizione = Array.from(modals).indexOf(showElement); // prendere la posizone numerica della modale visibile dentro il gruppo delle modali
     console.log(posizione);
     const nextId = posizione + 1; //aumento per prednere il valore della prossima variabile
     console.log(nextId);
     if (nextId < modalcnt) { //se la posizione della prossima modale è minore della quantità delle modali...
-        Rimuovimodali ();
+        Rimuovimodali();
         const premodal = modals[nextId]; // selezionare la modale con la nuova posizione e...
         premodal.classList.add("showmodal"); //...renderla visibile
         if (nextId == (modalcnt - 1)) { //se la posizione è l'ultima disponibile
@@ -129,6 +137,20 @@ function verificafreccia() {
         next.classList.remove("frecciainvisibile"); //rendere visibile la freccia next
     };
 };
+
+// per far funzionare la tastiera
+
+document.addEventListener('DOMContentLoaded', () => {  // DOMContentLoaded è un evento che viene attivato quando il documento HTML è stato completamente caricato
+    document.addEventListener('keydown', gestisciTasti); // listener () registrato per l'evento 'keydown') che si attiva ogni volta che un tasto sulla tastiera viene premuto.
+});
+
+function gestisciTasti(event) {
+    if (event.key === "ArrowRight") {  //se il tasto premuto è freccia destra
+        avanti();
+    } else if (event.key === "ArrowLeft") {  //se il tasto premuto è freccia sinistrs
+        indietro();
+    }
+}
 
 // funzione per nascondere ogni modale (no completemodal)
 
