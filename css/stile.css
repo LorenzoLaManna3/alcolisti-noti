@@ -335,7 +335,7 @@ h3 {
     aspect-ratio: 1 / 1.5;
     /* ASPECT RATIO DA DECIDERE, (OPPURE DECIDERE UN ALTEZZA FISSA, anche in base allo scherm0) */
     position: relative;
-    /* senza questo (position:relative) non funzionerebbe la posizione absolute del testo è relativa in termnini di top-left alla card e non all'intera pagina */
+    /* senza questo (position:relative) non funzionerebbe la posizione absolute del testo relativa in termnini di top-left alla card e non all'intera pagina */
 }
 
 
@@ -643,12 +643,12 @@ h3 {
 
 .grchiare1 {
     background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #BB8700 100%);
+    
 }
 
 .grchiare2 {
     background: linear-gradient(270deg, #D26500 0%, #D17621 50%, #E6A600 100%);
 }
-
 .grchiare3 {
     background: linear-gradient(90deg, #211800 0%, #BC8700 50%, #BB8700 100%);
 }
@@ -680,6 +680,64 @@ h3 {
 
 .grchiare10 {
     background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #BB8700 100%);
+}
+
+.grambrate1 {
+    background: linear-gradient(90deg, #F45D14 0%, #FF8A00 50%, #D36805 100%);
+}
+
+.grambrate2 {
+    background: linear-gradient(90deg, #F9BB1C 0%, #FF4D00 50%, #EB4600 100%);
+}
+
+.grambrate3 {
+    background: linear-gradient(90deg, #511800 0%, #790000 50%, #B00 100%);
+}
+
+.grambrate4 {
+    background: linear-gradient(90deg, #000 0%, #633002 50%, #3E2D00 100%);
+    /*background: linear-gradient(90deg, #4D1C00 0%, #371400 50%, #000 100%);*/
+}
+
+.grambrate5 {
+    background: linear-gradient(90deg, #F45D14 0%, #D36805 50%, #B30000 100%);
+    /*background: linear-gradient(90deg, #F45D14 0%, #EE2B00 50%, #D90000 100%);*/
+}
+
+.grambrate6 {
+    background: linear-gradient(90deg, #6D3B00 0%, #900 50%, #DB0202 100%);
+}
+
+.grambrate7 {
+    background: linear-gradient(90deg, #E46325 0%, #953100 50.5%, #682200 100%);
+}
+
+.grambrate8 {
+    background: linear-gradient(90deg, #4D1C00 0%, #371400 50%, #000 100%);
+}
+
+.grambrate9 {
+    background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #FF6201 100%);
+}
+
+.grambrate10 {
+    background: linear-gradient(0deg, #BB8700 0%, #BB8700 100%);
+}
+
+.grambrate11 {
+    background: linear-gradient(90deg, #BB8700 0%, #750 50%, #513A00 100%);
+}
+
+.grambrate12 {
+    background: linear-gradient(0deg, #F91C1C 0%, #F91C1C 100%);
+}
+
+.grambrate13 {
+    background: linear-gradient(90deg, #852800c9 0%, #652500 50%, #3B1500 100%);
+}
+
+.grambrate14 {
+    background: linear-gradient(90deg, #C74000 0%, #A04300 50%, #342600 100%);
 }
 
 /* responsive */
@@ -714,7 +772,8 @@ h3 {
         flex: 1 !important;
     }
 
-    .card:focus img, .card:active img {
+    .card:focus img,
+    .card:active img {
         transform: scale(1.10);
         transition-duration: 750ms;
         overflow: hidden;
