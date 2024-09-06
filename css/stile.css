@@ -451,22 +451,26 @@ h3 {
 
 .modals {
     flex-shrink: 0;
-    width: 500px;
+    height: 80vh;
     aspect-ratio: 1 / 1;
+    display: flex;
+    /* basterrebbe block, ma insieme a column e pi flex1 nella modal, non auamenta l'altezza della modale */
+    flex-direction: column;
 }
 
 .modal {
     display: none;
-    z-index: 6;
     background-color: var(--color1);
-    height: 100%;
     border-radius: var(--bordradius1);
     padding: 16px 16px;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-    flex-shrink: 0;
-    /* da controllare */
+    flex: 1;
+    /* per occupare tutto lo spazio in altezza (perchè c'è collum) */
+    overflow: hidden;
+    overflow-y: auto;
+    /* per permettere lo scorrimento verso il basso con una scrollbar (o con touch screen al telefono) */
 }
 
 
@@ -524,6 +528,27 @@ h3 {
     text-transform: uppercase;*/
 }
 
+/* scrollbar personalizzata della modale se presente ( in Safari e firefox non cambia?) */
+
+.modal::-webkit-scrollbar {
+    /* scrollbar intera */
+    width: 10px;
+    /* largezza scrollbar */
+    background-color: rgba(0, 0, 0, 0);
+    /* sfondo della scroll bar : invisibile */
+}
+
+.modal::-webkit-scrollbar-track {
+    /* barra di scrorrimento (Track in inglese) */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.modal::-webkit-scrollbar-thumb {
+    /* barra interna che scorre (Thumb) */
+    border-radius: var(--bordradius1);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 /* Pulsanti pre next e next*/
 
 .close,
@@ -535,7 +560,7 @@ h3 {
 
 .closeplusnext {
     display: flex;
-    height: 500px;
+    height: 80vh;
     /*uguale alla modale !!!*/
     padding: 16px 0px;
     flex-direction: column;
@@ -546,7 +571,8 @@ h3 {
 .pre,
 .next,
 .close,
-.closebanner {
+.closebanner,
+.fintoclose {
     display: flex;
     width: 20px;
     height: 20px;
@@ -643,12 +669,13 @@ h3 {
 
 .grchiare1 {
     background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #BB8700 100%);
-    
+
 }
 
 .grchiare2 {
     background: linear-gradient(270deg, #D26500 0%, #D17621 50%, #E6A600 100%);
 }
+
 .grchiare3 {
     background: linear-gradient(90deg, #211800 0%, #BC8700 50%, #BB8700 100%);
 }
@@ -782,14 +809,30 @@ h3 {
 
     .modals {
         width: 75vw;
+        /*500px =troppo piccolo */
         aspect-ratio: 1 / 2;
+        max-height: 90%;
+        /*per non far fuoriuscire la modal in vertiacle */
+        height: auto;
+        /* per annullare il valore fisso (in vh) */
     }
 
     .closeplusnext {
-        height: calc(75vw * 2);
+        height: 75vw;
+        /* come la largezza della modale */
+        max-height: 90%;
+        /* come la modale */
     }
 
     .gradient {
         width: 50px;
+    }
+}
+
+/* @media query per sistemare alcune cose */
+
+@media (min-width:600px) and (max-width:1000px) {
+    .testocard { /*per sistemare la largezza per non farlo uscire dalla card */
+        font-size: var(--h3size);
     }
 }
