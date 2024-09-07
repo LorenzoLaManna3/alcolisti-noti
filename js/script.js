@@ -30,7 +30,7 @@ let completemodal = document.querySelector(".completemodal"); // varibile contne
 
 const allcard = document.querySelectorAll(".card"); //stringa per tutte le card
 
-// per fa funsionare le card come pulsanti
+// per fa funsionare le card come pulsanti - card
 
 let itemId = ""; //variabile che conterra l'id della card che viene cliccata
 
@@ -138,10 +138,14 @@ function verificafreccia() {
     };
 };
 
-// per far funzionare la tastiera
+// per far funzionare la tastiera ( * riga 145-46 per lettura link)
 
 document.addEventListener('DOMContentLoaded', () => {  // DOMContentLoaded è un evento che viene attivato quando il documento HTML è stato completamente caricato
     document.addEventListener('keydown', gestisciTasti); // listener () registrato per l'evento 'keydown') che si attiva ogni volta che un tasto sulla tastiera viene premuto.
+    const params = new URLSearchParams(window.location.search); // per verificare il link di accesso
+    if (params.has('id') && params.get('id') === 'Random') {
+        randomodal();
+    };
 });
 
 function gestisciTasti(event) {
@@ -150,7 +154,19 @@ function gestisciTasti(event) {
     } else if (event.key === "ArrowLeft") {  //se il tasto premuto è freccia sinistrs
         indietro();
     }
-}
+};
+
+// funzione per il link random
+let randomNumber
+
+function random() {
+    randomNumber = Math.floor(Math.random() * modalcnt) + 1; // Genera un numero randomico da 1 al numero delle modali
+    console.log("Random" + randomNumber);
+    mostramodale(); // per mostrare la modale
+    Rimuovimodali(); // per sicurezza
+    const randommodal = modals[randomNumber]; // selezionare la modale con la nuova posizione e...
+    randommodal.classList.add("showmodal"); //...renderla visibile
+};
 
 // funzione per nascondere ogni modale (no completemodal)
 
