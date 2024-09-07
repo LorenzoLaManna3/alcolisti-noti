@@ -143,8 +143,10 @@ function verificafreccia() {
 document.addEventListener('DOMContentLoaded', () => {  // DOMContentLoaded è un evento che viene attivato quando il documento HTML è stato completamente caricato
     document.addEventListener('keydown', gestisciTasti); // listener () registrato per l'evento 'keydown') che si attiva ogni volta che un tasto sulla tastiera viene premuto.
     const params = new URLSearchParams(window.location.search); // per verificare il link di accesso
-    if (params.has('id') && params.get('id') === 'Random') {
+    if (params.has('id') && params.get('id') === 'random') {
         randomodal();
+    } else {
+        consolelog ("no random")
     };
 });
 
@@ -159,7 +161,7 @@ function gestisciTasti(event) {
 // funzione per il link random
 let randomNumber
 
-function random() {
+function randomodal() {
     randomNumber = Math.floor(Math.random() * modalcnt) + 1; // Genera un numero randomico da 1 al numero delle modali
     console.log("Random" + randomNumber);
     mostramodale(); // per mostrare la modale
