@@ -117,7 +117,7 @@ function avanti() {
     };
 };
 
-// funzione per verificare se le freccie devono essere visibili o meno (inoltr mostra la completemodal)
+// funzione per verificare se le freccie devono essere visibili o meno (inoltre mostra la completemodal)
 
 function verificafreccia() {
     completemodal.classList.add("showcompletemodal");//per mostrare la section citata precedentemente
@@ -138,17 +138,18 @@ function verificafreccia() {
     };
 };
 
-// per far funzionare la tastiera ( * riga 145-46 per lettura link)
+// per far funzionare la tastiera ( * riga 145-51 per lettura del link, 152 per cambiare link)
 
 document.addEventListener('DOMContentLoaded', () => {  // DOMContentLoaded è un evento che viene attivato quando il documento HTML è stato completamente caricato
     document.addEventListener('keydown', gestisciTasti); // listener () registrato per l'evento 'keydown') che si attiva ogni volta che un tasto sulla tastiera viene premuto.
     const hash = window.location.hash; // per verificare il link di accesso
-    if (hash === '#random') {
+    if (hash === '#random') { //verifica se hash è #random
         randomodal();
         console.log('random')
     } else {
         console.log('no random')
     };
+    changeLink();
 });
 
 function gestisciTasti(event) {
@@ -159,7 +160,7 @@ function gestisciTasti(event) {
     }
 };
 
-// funzione per il link random
+// funzione per la modale random
 let randomNumber
 
 function randomodal() {
@@ -170,6 +171,56 @@ function randomodal() {
     randommodal.classList.add("showmodal"); //...renderla visibile
     verificafreccia();
 };
+
+// funzione per generare un link random
+
+const links = [ // lista dei link
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/birre/chiare.html#random",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/birre/ambrate.html#random",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/birre/scure.html#random",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/vini/rossi.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/vini/bianchi.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/vini/rosati.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/vini/spumanti.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/vini/dolci.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/digestivi/grappe%20giovani.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/digestivi/grappe%20invecchiate.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/digestivi/grappe%20stravecchie.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/digestivi/grappe%20aromatizzate.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/digestivi/amari%20all'erbe.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/digestivi/amari%20forti.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/digestivi/amari%20secchi.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/digestivi/amari%20dolci.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/super%20alcolici/gin.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/super%20alcolici/rum.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/super%20alcolici/vodka.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/super%20alcolici/agave.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/super%20alcolici/assenzio.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/super%20alcolici/bitter.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/super%20alcolici/passoa.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/super%20alcolici/triplesec.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/seccchi/whisky.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/seccchi/brandy.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/seccchi/vermouth.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/seccchi/sidro.html",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/cocktail/predinner.html#random",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/cocktail/after.html#random",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/cocktail/frozen.html#random",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/cocktail/pestati.html#random",
+    "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/extra/curiosit%C3%A0.html#random",
+];
+
+function getRandomLink() { // Funzione per generare un link randomico
+    const randomlink = Math.floor(Math.random() * links.length); // numero randomico da 0 a numero dei link
+    console.logr('Random' + randomlink);
+    return links[randomlink]; // questo valore prendera il posto di "getRandomLink()" nella riga 192
+};
+
+function changeLink() { //si attiva cliccando sulla scritta random
+    const linkfinale = document.getElementById('random');
+    linkfinale.href = getRandomLink(); // Imposta il nuovo link randomico ricnhiamando la funzione
+    linkfinale.innerText = linkElement.href; // Aggiorna il testo del link
+}
 
 // funzione per nascondere ogni modale (no completemodal)
 
