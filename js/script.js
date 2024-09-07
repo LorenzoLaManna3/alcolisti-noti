@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {  // DOMContentLoaded è un
     if (params.has('id') && params.get('id') === 'random') {
         randomodal();
     } else {
-        consolelog ("no random")
+        console.log ("no random")
     };
 });
 
