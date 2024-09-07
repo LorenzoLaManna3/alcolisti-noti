@@ -15,6 +15,15 @@ closebanner.onclick = function () {
     console.log('nascondi banner')
 };
 
+
+phonebannertot.addEventListener('click', function (event) { // per far chiudere il banner anche quando si clicca nello sfondo
+    if (event.target === this) { // Controlla se il target dell'evento è il div stesso
+        console.log('backgraund banner');
+        phonebannertot.classList.remove("showbanner");
+        console.log('nascondi banner')
+    }
+});
+
 // Per far funzionare le modali:
 
 let modals = document.querySelectorAll(".modal"); //stringa per contenere tutte le modali
@@ -160,6 +169,14 @@ function gestisciTasti(event) {
     }
 };
 
+// funzione per nascondere ogni modale (no completemodal)
+
+function Rimuovimodali() {
+    for (let b = 0; b < modalcnt; b++) { //ciclo che va da zero a "modalcnt" (numero delle modali): la "b" aumenta progressivamente di uno
+        modals[b].classList.remove("showmodal"); //rimuve la classse "showmaodal" alla modale con posizione "b" quindi finendo tutti i cicli saranno tutte invisibili
+    };
+};
+
 // funzione per la modale random
 let randomNumber
 
@@ -174,7 +191,7 @@ function randomodal() {
 
 // funzione per generare un link random
 
-const links = [ // lista dei link
+const allinks = [ // lista dei link
     "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/birre/chiare.html#random",
     "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/birre/ambrate.html#random",
     "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/birre/scure.html#random",
@@ -210,22 +227,22 @@ const links = [ // lista dei link
     "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/extra/curiosit%C3%A0.html#random",
 ];
 
+let linkcnt = allinks.length;
+let randomlink = "";
+
 function getRandomLink() { // Funzione per generare un link randomico
-    const randomlink = Math.floor(Math.random() * links.length); // numero randomico da 0 a numero dei link
-    console.logr('Random' + randomlink);
-    return links[randomlink]; // questo valore prendera il posto di "getRandomLink()" nella riga 192
+    const randomN = Math.floor(Math.random() * linkcnt); // numero randomico da 0 a numero dei link
+    console.log('Random' + randomN);
+    randomlink = allinks[randomN]; //link randomico preso dalla lista di tutti i link
+    console.log(randomlink);
 };
 
+const linkfinale = document.querySelectorAll('.random') // all siccome sono 2
+
 function changeLink() { //si attiva cliccando sulla scritta random
-    const linkfinale = document.getElementById('random');
-    linkfinale.href = getRandomLink(); // Imposta il nuovo link randomico ricnhiamando la funzione
-    linkfinale.innerText = linkElement.href; // Aggiorna il testo del link
-}
-
-// funzione per nascondere ogni modale (no completemodal)
-
-function Rimuovimodali() {
-    for (let b = 0; b < modalcnt; b++) { //ciclo che va da zero a "modalcnt" (numero delle modali): la "b" aumenta progressivamente di uno
-        modals[b].classList.remove("showmodal"); //rimuve la classse "showmaodal" alla modale con posizione "b" quindi finendo tutti i cicli saranno tutte invisibili
+    getRandomLink(); //per generare il link randomico
+    for (let b = 0; b < 2; b++) { 
+        linkfinale[b].href = randomlink; //ogni "a" ottiene il link nel suo href
+        console.log(linkfinale[b].href);
     };
 };
