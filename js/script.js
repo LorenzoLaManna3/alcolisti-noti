@@ -142,8 +142,8 @@ function verificafreccia() {
 
 document.addEventListener('DOMContentLoaded', () => {  // DOMContentLoaded è un evento che viene attivato quando il documento HTML è stato completamente caricato
     document.addEventListener('keydown', gestisciTasti); // listener () registrato per l'evento 'keydown') che si attiva ogni volta che un tasto sulla tastiera viene premuto.
-    const params = new URLSearchParams(window.location.search); // per verificare il link di accesso
-    if (params.has('id') && params.get('id') === 'random') {
+    const hash = window.location.hash; // per verificare il link di accesso
+    if (hash === '#random') {
         randomodal();
         console.log('random')
     } else {
