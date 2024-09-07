@@ -491,7 +491,6 @@ h3 {
     align-items: center;
     /*per allineare al testo */
     gap: 16px;
-    border-radius: var(--bordradius1);
 }
 
 .titolomodale {
@@ -519,7 +518,9 @@ h3 {
     align-self: stretch;
 }
 
-.testomodale p, .testomodale li /* "li" per l'elenco puntato */ {
+.testomodale p,
+.testomodale li {
+    /* "li" per l'elenco puntato */
     align-self: stretch;
     color: var(--color3);
     font-size: var(--modaletextsize);
@@ -666,6 +667,7 @@ h3 {
 .gradient {
     width: 122px;
     height: 25px;
+    border-radius: var(--bordradius1);
 }
 
 .grchiare1 {
@@ -833,7 +835,8 @@ h3 {
 /* @media query per sistemare alcune cose */
 
 @media (min-width:600px) and (max-width:1000px) {
-    .testocard { /*per sistemare la largezza per non farlo uscire dalla card */
+    .testocard {
+        /*per sistemare la largezza per non farlo uscire dalla card */
         font-size: var(--h3size);
     }
 }

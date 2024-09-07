@@ -1,6 +1,6 @@
 //funzione per far funzionare l'hamburger e il banner 
 
-let phonebannertot = document.querySelector(".phonebannertot");  //var per contenere il banner completo
+let phonebannertot = document.querySelector(".phonebannertot");  // var per contenere il banner completo
 
 let hamburger = document.querySelector(".hamburger"); //var per l'icona hamburger
 let closebanner = document.querySelector(".closebanner"); //var per il pulsante X
