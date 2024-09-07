@@ -117,7 +117,7 @@ function avanti() {
     };
 };
 
-// funzione per verificare se le freccie devono essere visibili o meno
+// funzione per verificare se le freccie devono essere visibili o meno (inoltr mostra la completemodal)
 
 function verificafreccia() {
     completemodal.classList.add("showcompletemodal");//per mostrare la section citata precedentemente
@@ -165,10 +165,10 @@ let randomNumber
 function randomodal() {
     randomNumber = Math.floor(Math.random() * modalcnt) + 1; // Genera un numero randomico da 1 al numero delle modali
     console.log('Random' + randomNumber);
-    mostramodale(); // per mostrare la modale
     Rimuovimodali(); // per sicurezza
     const randommodal = modals[randomNumber]; // selezionare la modale con la nuova posizione e...
     randommodal.classList.add("showmodal"); //...renderla visibile
+    verificafreccia();
 };
 
 // funzione per nascondere ogni modale (no completemodal)
