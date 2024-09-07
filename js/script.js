@@ -145,8 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {  // DOMContentLoaded è un
     const params = new URLSearchParams(window.location.search); // per verificare il link di accesso
     if (params.has('id') && params.get('id') === 'random') {
         randomodal();
+        console.log('random')
     } else {
-        console.log ("no random")
+        console.log('no random')
     };
 });
 
@@ -163,7 +164,7 @@ let randomNumber
 
 function randomodal() {
     randomNumber = Math.floor(Math.random() * modalcnt) + 1; // Genera un numero randomico da 1 al numero delle modali
-    console.log("Random" + randomNumber);
+    console.log('Random' + randomNumber);
     mostramodale(); // per mostrare la modale
     Rimuovimodali(); // per sicurezza
     const randommodal = modals[randomNumber]; // selezionare la modale con la nuova posizione e...
