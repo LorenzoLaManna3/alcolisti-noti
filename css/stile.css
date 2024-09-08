@@ -102,6 +102,9 @@ li {
     unicode-bidi: isolate;
     position: relative;
     /*per far funzionare l'absolute del banner sottostante */
+    font-size: var(--textsize);
+    font-weight: var(--fontmedium);
+    line-height: var(--lineheight);
 }
 
 header a,
