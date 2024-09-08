@@ -1,3 +1,4 @@
+let linkcnt = "";
 //funzione per far funzionare l'hamburger e il banner 
 
 let phonebannertot = document.querySelector(".phonebannertot");  // var per contenere il banner completo
@@ -227,7 +228,7 @@ const allinks = [ // lista dei link
     "https://lorenzolamanna3.github.io/alcolisti-noti/pagine/extra/curiosit%C3%A0.html#random",
 ];
 
-let linkcnt = allinks.length;
+linkcnt = allinks.length;
 let randomlink = "";
 
 function getRandomLink() { // Funzione per generare un link randomico
