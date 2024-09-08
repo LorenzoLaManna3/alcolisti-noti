@@ -21,6 +21,8 @@
     --fontbold: 700;
     --h1size: 50px;
     /* è 78 su figma - Usato anche per le card con immagini */
+    --cardtextsize: 34px;
+    /* questo valore non viene usato con media query minori */
     --h3size: 27px;
     /* 40 su figma */
     --textsize: 16px;
@@ -271,7 +273,6 @@ h2 {
     width: 100%;
     object-position: center center;
     transform-origin: center;
-    object-position: center;
     /* Centra l'immagine */
     display: block;
 }
@@ -355,6 +356,7 @@ h3 {
     transform: scale(1, 1);
     transition: 1500ms;
     transform-origin: center;
+    aspect-ratio: 1 / 1.5;
 }
 
 .rigacards img {
@@ -385,7 +387,7 @@ h3 {
     color: var(--color1);
     width: 100%;
     z-index: 3;
-    font-size: var(--h1size);
+    font-size: var(--cardtextsize);
     font-weight: var(--fontbold);
     text-transform: uppercase;
 }
@@ -784,6 +786,14 @@ h3 {
         display: none;
     }
 
+    .specialtitolohero1 {
+        font-size: 28px;
+    }
+
+    .specialtitolohero2 {
+        font-size: 36px;
+    }
+
     .sfondohero img {
         object-position: 50%;
     }
@@ -837,9 +847,18 @@ h3 {
 
 /* @media query per sistemare alcune cose */
 
-@media (min-width:600px) and (max-width:1000px) {
+
+
+@media (min-width:801px) and (max-width:1000px) {
     .testocard {
         /*per sistemare la largezza per non farlo uscire dalla card */
         font-size: var(--h3size);
+    }
+}
+
+@media (min-width:601px) and (max-width:800px) {
+    .testocard {
+        /*per sistemare la largezza per non farlo uscire dalla card */
+        font-size: var(--textsize);
     }
 }
