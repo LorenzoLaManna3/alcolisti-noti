@@ -872,3 +872,10 @@ h3 {
         font-size: var(--textsize);
     }
 }
+
+@media (max-width:375px) {
+    .testocard {
+        /*per sistemare la largezza per non farlo uscire dalla card */
+        font-size: var(--h3size);
+    }
+}
