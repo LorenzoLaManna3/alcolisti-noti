@@ -808,6 +808,11 @@ h3 {
         object-position: 50%;
     }
 
+    .specialsfondo1 img {
+        position: relative;
+        object-position: 75% 50%;
+    }
+
     .rigacards {
         flex-direction: column;
         gap: var(--gap1) 0px;
@@ -870,5 +875,12 @@ h3 {
     .testocard {
         /*per sistemare la largezza per non farlo uscire dalla card */
         font-size: var(--textsize);
+    }
+}
+
+@media (max-width:375px) {
+    .testocard {
+        /*per sistemare la largezza per non farlo uscire dalla card */
+        font-size: var(--h3size);
     }
 }
