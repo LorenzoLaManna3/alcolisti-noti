@@ -206,7 +206,7 @@ li:hover .banner {
 .testohero {
     height: 100%;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 h1,
@@ -265,6 +265,12 @@ h2 {
     z-index: 1;
     overflow: hidden;
     /* per rendere invisibile la parte dell'immagine non interna al div */
+}
+
+.gradienthero {
+    z-index: 2;
+    display: none;
+    background: linear-gradient(90deg, rgb(0, 0, 0) -5%, rgba(0, 0, 0, 0) 100%);
 }
 
 .sfondohero img {
@@ -792,6 +798,10 @@ h3 {
 
     .specialtitolohero2 {
         font-size: 36px;
+    }
+
+    .gradienthero {
+        display: block;
     }
 
     .sfondohero img {
