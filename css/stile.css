@@ -25,6 +25,8 @@
     /* questo valore non viene usato con media query minori */
     --h3size: 27px;
     /* 40 su figma */
+    --h4size: 20px;
+    /* 32 su figma */
     --textsize: 16px;
     /*24 su figma */
     --modaletextsize: 14px;
@@ -52,6 +54,7 @@ p,
 h1,
 h2,
 h3,
+h4,
 a,
 li,
 .text {
@@ -309,6 +312,18 @@ h3 {
     font-size: var(--h3size);
     font-weight: var(--fontbold);
     text-transform: uppercase;
+}
+
+.specialh3{
+    padding-top: var(--gap1);
+}
+
+h4 {
+    padding-top:var(--gap1);
+    font-size: var(--h4size);
+    font-weight: var(--fontbold);
+    text-transform: uppercase;
+
 }
 
 .text p {
