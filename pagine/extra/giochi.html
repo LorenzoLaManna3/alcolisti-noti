@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="../bevi-responsabilmente.html">Bevi Responsabilmente</a></li>
+                    <li><a href="../pagine singole/bevi-responsabilmente.html">Bevi Responsabilmente</a></li>
                     <li>
                         <a href="">Extra</a>
                         <div class="banner">
@@ -49,7 +49,7 @@
                             <div>
                                 <a href="../extra/curiosità.html">Curiosità</a>
                                 <a href="../extra/giochi.html">Giochi</a>
-                                <a href="" id="random">Random Drink</a>
+                                <a href="#" id="random" class="random" onclick="changeLink()">Random Drink</a>
                             </div>
                         </div>
                     </li>
@@ -75,8 +75,9 @@
     </header>
     <main>
         <section class="hero">
+            <div class="sfondohero gradienthero">
+            </div>
             <div class="sfondohero">
-                <!--da aggiungere l'immagine-->
                 <img src="../../immagini/giochi/giochi2.jpg" alt="">
             </div>
             <div class="testohero">
@@ -144,7 +145,7 @@
                     <div class="card invisiblecard">
                     </div>
                     <div class="card" id='item_10'>
-                        <p class="testocard">patruni e sutta</p>
+                        <p class="testocard">Patruni e Sutta</p>
                     </div>
                     <div class="card invisiblecard">
                     </div>
@@ -169,7 +170,7 @@
                         </div>
                     </div>
                     <div class="testomodale">
-                        <p> <b> Consiste nel lanciare una pallina da ping pong con lo scopo di fare centro in un bicchiere di birra posto nell’altro di un tavolo.</b>
+                        <p> <b> Consiste nel lanciare una pallina da ping pong con lo scopo di fare centro in un bicchiere di birra posto nell'altro di un tavolo.</b>
                         </p>
                         <p><b>N.giocatori </b>minimo 2 (si può giocare anche in squadre)<br>
                             <b>Preparativi: </b>1 minuto<br>
@@ -183,7 +184,6 @@
                             da lui colpito. Inoltre, spesso si concede a chi fa centro un tiro aggiuntivo.<br>
                             <b> Vittoria: </b>Il gioco si conclude con la vittoria della squadra che ha fatto centro in tutti i bicchieri avversari.
                         </p>
-                    </p>
                     </div>
                 </div>
                 <div class="modal" id='item_2'>
@@ -202,8 +202,8 @@
                             <b>Equipaggiamento: </b>bicchiere/tazza e delle monete uguali<br>
                             <b>Regole: </b>Si gioca turni (in genere in senso orario attorno al tavolo). Se il giocatore riesce a centrare il bicchiere,
                              distribuisce la dose contenuta nel bicchiere a un giocatore a sua scelta e gioca nuovamente. Se fallisce, passa al giocatore successivo.
-                              Se un giocatore dovesse centrare l’obiettivo per tre volte di seguito, potrà inventare una nuova regola (di solito creativa e divertente).
-                               In alcune versioni il bicchiere in cui si deve centrare e diverso da quello in cui il giocatore beve (di solito per motivi igienici)<br>
+                              Se un giocatore dovesse centrare l'obiettivo per tre volte di seguito, potrà inventare una nuova regola (di solito creativa e divertente).
+                               In alcune versioni il bicchiere in cui si deve centrare e diverso da quello in cui il giocatore beve (di solito per motivi igienici).
                         </p>
                     </div>
                 </div>
@@ -226,7 +226,7 @@
                             essere gli stessi pezzi). Se viene complicato usare i pezzi originali.<br>
                             <b>Regole </b> si seguono le regole standard dei giochi originali, o meglio, quelle scelte prima di giocare, anche una qualunque 
                             versione alternativa. Nella dama se si stanno utilizzando i bicchieri, il pezzo che viene promosso (diventando appunto “dama”) 
-                            viene posizionato sopra/dentro un altro per distinguerlo dagli altri.<br>
+                            viene posizionato sopra/dentro un altro per distinguerlo dagli altri.
                         </p>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                             <b>Preparazione: </b>Pulito, croccante, con una dolcezza maltata equilibrata da un amaro delicato e
                             rinfrescante<br>
                             <b>Regole </b> A turno ogni giocatore enuncia un'affermazione che comincia con “Non ho mai...” e coloro che hanno compiuto 
-                            quell'azione deve bere. Se nessuno beve il giocatore che ha enunciato la frase deve bere lui stesso.<br>
+                            quell'azione deve bere. Se nessuno beve il giocatore che ha enunciato la frase deve bere lui stesso.
                         </p>
                     </div>
                 </div>
@@ -269,7 +269,7 @@
                              Quando inizia la gara, il primo giocatore di ogni squadra può prendere un bicchiere e cominciarne a bere il contenuto. 
                              Una volta terminato, deve porre il bicchiere al contrario sopra la propria testa, così da dimostrare di non aver barato.
                               Il giocatore seguente a questo punto può a sua volta prendere il proprio bicchiere e cominciare a bere, e così via. La 
-                              prima squadra che beve tutto vince il gioco.<br>
+                              prima squadra che beve tutto vince il gioco.
                         </p>
                     </div>
                 </div>
@@ -280,14 +280,14 @@
                         </div>
                     </div>
                     <div class="testomodale">
-                        <p><b>Versione allegra del più comune gioco dell’oca.</b>
+                        <p><b>Versione allegra del più comune gioco dell'oca.</b>
                         </p>
                         <p><b>N.giocatori </b>minimo 2<br>
                             <b>Preparativi: </b>5 minuti<br>
                             <b>Durata: </b>20-50 minuti<br>
                             <b>Equipaggiamento: </b>un paio di dadi (da 6 facce), un tabellone (potete scaricarlo...),  bevande alcoliche<br>
                             <b>Preparazione: </b>stampare il tabellone oppure disegnarlo e scriverlo da se.<br>
-                            <b>Regole </b> ogni giocatore nel suo turno tira i dadi e verrà applicato il compito scritto nella casella in cui è finito<br>
+                            <b>Regole </b> ogni giocatore nel suo turno tira i dadi e verrà applicato il compito scritto nella casella in cui è finito
                         </p>
                     </div>
                 </div>
@@ -298,7 +298,7 @@
                         </div>
                     </div>
                     <div class="testomodale">
-                        <p><b>Uguale al gioco classico, ma ogni volta che un giocatore colpisce una delle navi dell’avversario, questo deve bere un sorso. </b>
+                        <p><b>Uguale al gioco classico, ma ogni volta che un giocatore colpisce una delle navi dell'avversario, questo deve bere un sorso. </b>
                         </p>
                         <p><b>N.giocatori </b>2<br>
                             <b>Preparativi: </b>5 minuti<br>
@@ -308,10 +308,10 @@
                             <b>Preparazione: </b>se serve, disegnare o stampare le griglie (consiglio 8x8) e posizionare qualcosa tra esse per non far vedere 
                             la mappa avversaria ai due giocatori. Se le griglie sono abbastanza grandi, si possono usare dei bicchieri/shottini pieni della bevanda,
                              come pedine che sostituiranno le navi. Inoltre altre due griglie si possono utilizzare per segnare le zone colpite.<br>
-                            <b>Regole </b> all’inizio i due giocatori dovranno posizionare le navi (o bicchieri), in modo che rispettino il numero e le 
-                            dimensioni delle navi che si sono stabilite (consiglio una lunga 4, una lunga 3, una lunga 2 e l’ultima formata da una singola unità). 
+                            <b>Regole </b> all'inizio i due giocatori dovranno posizionare le navi (o bicchieri), in modo che rispettino il numero e le 
+                            dimensioni delle navi che si sono stabilite (consiglio una lunga 4, una lunga 3, una lunga 2 e l'ultima formata da una singola unità). 
                             Se si vuole, tutte le navi potrebbero essere anche formate da una singola unità. A turni i due giocatori cercheranno di indovinare la 
-                            posizione delle navi nemiche, dicendo le coordinate (tipo B-7) e se andranno a segno l’avversario dovrà bere lo shottino. Inoltre di 
+                            posizione delle navi nemiche, dicendo le coordinate (tipo B-7) e se andranno a segno l'avversario dovrà bere lo shottino. Inoltre di 
                             solito vengono aggiunte anche queste 2 regole :
                             Le navi non si possono toccare
                             Il turno del giocatore finisce quando sbaglia, quindi se colpisce una nave nemica può tentare di nuovo.<br>
@@ -357,7 +357,7 @@
                                 </li>
                                 <li>
                                     <b>5 (Pollici):</b> Il giocatore mette il pollice sul bordo del tavolo e tutti gli altri giocatori sono obbligati a fare lo stesso.
-                                     L’ultimo a farlo deve beve. <br>
+                                     L'ultimo a farlo deve beve. <br>
                                 </li>
                                 <li>
                                     <b>6 (Io non ho mai):</b> il giocatore che ha pescato la carta dirà "Non ho mai ...". Chiunque abbia compiuto l'azione deve bere. <br>
@@ -393,7 +393,7 @@
                                 </li>
                                 <li>
                                     <b>Jolly:</b> Nel tal caso nel vostro mazzo abbiate inserito anche questa carta, essa potrà essere qualunque delle restanti 13, a seconda
-                                     del volere del giocatore che ha pescato, che dovrà dichiarare ad alta voce a quale carta (o regola) dovrà corrispondere. <br>
+                                     del volere del giocatore che ha pescato, che dovrà dichiarare ad alta voce a quale carta (o regola) dovrà corrispondere.
                                 </li>
                             </ul>
                         </p>
@@ -406,7 +406,7 @@
                         </div>
                     </div>
                     <div class="testomodale">
-                        <p><b>Mr. Three, chiamato anche Three man è un gioco di dadi, che può essere giocato con almeno tre persone, 
+                        <p><b>Mr. Three, chiamato anche Three man è un gioco di dadi, che può essere giocato con almeno tre persone, 
                             ma alcuni lo considerano migliore con circa cinque. </b>
                         </p>
                         <p><b>N.giocatori </b>minimo 3<br>
@@ -414,7 +414,7 @@
                             <b>Durata: </b>Variabile<br>
                             <b>Equipaggiamento: </b>qualsiasi bevanda alcolica, un paio die dadi (a 6 facce), possibilmente dei bicchieri per i giocatori<br>
                             <b>Preparazione: </b>sistemarsi attorno a un tavolo<br>
-                            <b>Regole </b> all’inizio del gioco decidere a caso un giocatore che assuma per primo il ruolo di mr. Three. Il giocatore
+                            <b>Regole </b> all'inizio del gioco decidere a caso un giocatore che assuma per primo il ruolo di mr. Three. Il giocatore
                              con questo ruolo tirerà i dadi e verranno seguite delle istruzioni asseconda del risultato ottenuto. Le regole che stabiliscono
                              i seguenti effetti:<br>
                              <ul>
@@ -451,7 +451,7 @@
                     </div>
                     <div class="testomodale">
                         <p><b>Gioco di carte e bevute in cui scopo è quello di bere e far andare "olmo" l'avversario pagando il meno possibile le bevande.
-                             In questo gioco, diffuso principalmente nell’Italia meridionale, in modo diverso da molti altri giochi alcolici, “bere” è un premio </b>
+                             In questo gioco, diffuso principalmente nell'Italia meridionale, in modo diverso da molti altri giochi alcolici, “bere” è un premio </b>
                         </p>
                         <p><b>N.giocatori </b>minimo 2<br>
                             <b>Preparativi: </b>2 minuti<br>
@@ -513,11 +513,11 @@
                     <a href="../seccchi/secchi.html">Secchi</a>
                     <a href="../cocktail/cocktail.html">Cocktail</a>
                 </div>
-                <a href="../bevi-responsabilmente.html" class="testophonebanner">Bevi Responsabilmente</a></li>
+                <a href="../pagine singole/bevi-responsabilmente.html" class="testophonebanner">Bevi Responsabilmente</a></li>
                 <div class="testophonebanner">
                     <a href="../extra/curiosità.html">Curiosità</a>
                     <a href="../extra/giochi.html">Giochi</a>
-                    <a href="" id="random">Random Drink</a>
+                    <a href="#" id="random" class="random" onclick="changeLink()">Random Drink</a>
                 </div>
             </div>
         </section>
@@ -531,8 +531,8 @@
             <nav>
                 <ul>
                     <!--da aggiungere i link-->
-                    <li><a href="../chi-siamo.html">Chi siamo</a></li>
-                    <li><a href="../info.html">Info</a></li>
+                    <li><a href="../pagine singole/chi-siamo.html">Chi siamo</a></li>
+                    <li><a href="../pagine singole/info.html">Info</a></li>
                 </ul>
             </nav>
         </section>

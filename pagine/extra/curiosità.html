@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><a href="../bevi-responsabilmente.html">Bevi Responsabilmente</a></li>
+                    <li><a href="../pagine singole/bevi-responsabilmente.html">Bevi Responsabilmente</a></li>
                     <li>
                         <a href="">Extra</a>
                         <div class="banner">
@@ -49,7 +49,7 @@
                             <div>
                                 <a href="../extra/curiosità.html">Curiosità</a>
                                 <a href="../extra/giochi.html">Giochi</a>
-                                <a href="" id="random">Random Drink</a>
+                                <a href="#" id="random" class="random" onclick="changeLink()">Random Drink</a>
                             </div>
                         </div>
                     </li>
@@ -75,19 +75,18 @@
     </header>
     <main>
         <section class="hero">
+            <div class="sfondohero gradienthero">
+            </div>
             <div class="sfondohero">
-                <!--da aggiungere l'immagine-->
-                <img src="../../immagini/giochi/giochi2.jpg" alt="">
+                <img src="../../immagini/copertina-curiosità.jpg" alt="">
             </div>
             <div class="testohero">
                 <h1>Curiosità</h1>
                 <!--da aggiungere sottotitolo?-->
                 <div class="sottotitolohero">
                     <!-- questa classe va aggiunta nel css-->
-                    <h2 class="cithero">"Ecco un bicchiere di avventura, ma ricorda: l'eccesso può trasformare l'esotico in ordinario."
-                    </h2>
-                    <!-- questa classe va aggiunta nel css-->
-                    <h2 class="firmacithero">
+                    <h2 class="cithero">"Ecco un bicchiere di avventura, ma ricorda: l'eccesso può trasformare l'esotico
+                        in ordinario."<br>
                     </h2>
                 </div>
             </div>
@@ -95,11 +94,13 @@
         <section class="element">
             <div class="text">
                 <h3>BENVENUTI NELLA SEZIONE CURIOSITà</h3>
-                <p>Gli alcolici esotici evocano i colori e i profumi di terre lontane, trasportandoci in un viaggio sensoriale attraverso tradizioni e 
-                    culture affascinanti. Dai rum caraibici dal gusto intenso, ai liquori tropicali infusi con frutti rari, ogni sorso racconta una storia 
-                    di avventure, feste e convivialità. Le ricette, spesso custodite gelosamente, riflettono la ricchezza degli ingredienti locali e l’arte della mixologia.
-                     Che si tratti di un cocktail rinfrescante a base di mango e cocco o di un distillato speziato, gli alcolici esotici sono un invito a scoprire, 
-                     assaporare e sognare, unendo mondi diversi in un brindisi di pura gioia.
+                <p>Gli alcolici esotici evocano i colori e i profumi di terre lontane, trasportandoci in un viaggio
+                    sensoriale attraverso tradizioni e culture affascinanti. Dai rum caraibici dal gusto intenso, ai
+                    liquori tropicali infusi con frutti rari, ogni sorso racconta una storia di avventure, feste e
+                    convivialità. Le ricette, spesso custodite gelosamente, riflettono la ricchezza degli ingredienti
+                    locali e l'arte della mixologia. Che si tratti di un cocktail rinfrescante a base di mango e cocco o
+                    di un distillato speziato, gli alcolici esotici sono un invito a scoprire, assaporare e sognare,
+                    unendo mondi diversi in un brindisi di pura gioia.
                 </p>
             </div>
         </section>
@@ -108,26 +109,26 @@
             <div class="cards sottocategorie">
                 <div class="rigacards">
                     <div class="card" id='item_1'>
-                        <p class="testocard">sakè</p>
+                        <p class="testocard">Saké</p>
                     </div>
                     <div class="card" id='item_2'>
-                        <p class="testocard">shochu</p>
+                        <p class="testocard">Shochu</p>
                     </div>
                     <div class="card" id='item_3'>
-                        <p class="testocard">kumis/airag/arkhi</p>
+                        <p class="testocard">Kumis</p>
                     </div>
                 </div>
                 <div class="rigacards">
-                    <div class="card" id='item_4'>
-                        <p class="testocard">mojito baxeichito</p>
+                    <div class="card invisiblecard half">
                     </div>
-                    <a class="card invisiblecard half">
-                    </a>
-                    <a class="card specialcard" href="item_5">
-                    <div class="card" id='item_5'>
-                        <p class="testocard">mojito cubano</p>
+                    <div class="card specialcard" id='item_4'>
+                        <p class="testocard">Mojito Baxeichito</p>
                     </div>
-                    <a class="card invisiblecard half">
+                    <div class="card specialcard" id='item_5'>
+                        <p class="testocard">Mojito Cubano</p>
+                    </div>
+                    <div class="card invisiblecard half">
+                    </div>
                 </div>
             </div>
         </section>
@@ -145,297 +146,124 @@
                 <div class="modal" id='item_1'>
                     <div class="headermodale">
                         <div>
-                            <p class="titolomodale">sakè</p>
+                            <p class="titolomodale">Saké</p>
+                            <img src="../../immagini/icone/bicchiere-SAKE.svg" alt="">
                         </div>
                     </div>
                     <div class="testomodale">
-                        <p> <b>Il sakè è una bevanda alcolica tradizionale giapponese, le cui origini risalgono a circa 2000 anni fa. La sua produzione è 
-                            legata a rituali religiosi e celebrazioni, e si ritiene che sia nato dalla fermentazione del riso, un cereale sacro in Giappone.</b>
-                            <b>Il sakè è una bevanda alcolica tradizionale giapponese, le cui origini risalgono a circa 2000 anni fa.
-                                 La sua produzione è legata a rituali religiosi e celebrazioni, e si ritiene che sia nato dalla fermentazione
-                                  del riso, un cereale sacro in Giappone.</b> <br>
-                            <b>Inizialmente, il sakè veniva prodotto in piccole quantità e consumato durante cerimonie religiose shintoiste. 
-                                Con il passare dei secoli, la produzione si è evoluta e affinata, specialmente durante il periodo Edo (1603-1868),
-                                 quando divenne più accessibile al pubblico. Durante questo periodo, diverse tecniche di fermentazione e affinamento
-                                  hanno portato a una maggiore varietà di sakè, inclusi quelli di alta qualità. </b> <br>
-                            <b>Oggi, il sakè è un simbolo della cultura giapponese, apprezzato in tutto il mondo e servito in situazioni che spaziano da cerimonie
-                                 tradizionali a semplici occasioni conviviali. La sua produzione è ancora considerata un'arte, con un forte focus sulla qualità degli 
-                                 ingredienti e sul processo di fermentazione, che contribuiscono al suo sapore unico e distintivo. </b> <br>
+                        <p>Il sakè è una bevanda alcolica tradizionale giapponese, le cui origini risalgono a circa
+                            2000 anni fa. La sua produzione è legata a rituali religiosi e celebrazioni, e si ritiene
+                            che sia nato dalla fermentazione del riso, un cereale sacro in Giappone.
+                        </p>
+                        <p>Inizialmente, il sakè veniva prodotto in piccole quantità e consumato durante cerimonie
+                            religiose shintoiste. Con il passare dei secoli, la produzione si è evoluta e affinata,
+                            specialmente durante il periodo Edo (1603-1868), quando divenne più accessibile al pubblico.
+                            Durante questo periodo, diverse tecniche di fermentazione e affinamento hanno portato a una
+                            maggiore varietà di sakè, inclusi quelli di alta qualità.
+                        </p>
+                        <p>Oggi, il sakè è un simbolo della cultura giapponese, apprezzato in tutto il mondo e servito
+                            in situazioni che spaziano da cerimonie tradizionali a semplici occasioni conviviali. La sua
+                            produzione è ancora considerata un'arte, con un forte focus sulla qualità degli ingredienti
+                            e sul processo di fermentazione, che contribuiscono al suo sapore unico e distintivo.
+                        </p>
                     </div>
                 </div>
                 <div class="modal" id='item_2'>
                     <div class="headermodale">
                         <div>
-                            <p class="titolomodale">Gioco della moneta</p>
+                            <p class="titolomodale">Shochu</p>
+                            <img src="../../immagini/icone/bicchiere-7.svg" alt="">
                         </div>
                     </div>
                     <div class="testomodale">
-                        <p><b>Lo scopo è di far rimbalzare una monetina su una superficie piatta, cercando di farla atterrare, senza ulteriori rimbalzi,
-                             in un bicchiere (o in una tazza) posizionato sul tavolo.</b>
+                        <p>Lo shochu è una bevanda alcolica tradizionale giapponese, simile a un distillato, che ha una
+                            storia che risale al XVI secolo. La sua origine è legata all'introduzione della
+                            distillazione nel paese, probabilmente influenzata dai contatti con gli occidentali e dai
+                            commercianti portoghesi.
                         </p>
-                        <p><b>N.giocatori </b>di solito +3<br>
-                            <b>Preparativi:</b>1 minuto<br>
-                            <b>Durata: </b>10-20 minuti o meno<br>
-                            <b>Equipaggiamento: </b>bicchiere/tazza e delle monete uguali<br>
-                            <b>Regole: </b>Si gioca turni (in genere in senso orario attorno al tavolo). Se il giocatore riesce a centrare il bicchiere,
-                             distribuisce la dose contenuta nel bicchiere a un giocatore a sua scelta e gioca nuovamente. Se fallisce, passa al giocatore successivo.
-                              Se un giocatore dovesse centrare l’obiettivo per tre volte di seguito, potrà inventare una nuova regola (di solito creativa e divertente).
-                               In alcune versioni il bicchiere in cui si deve centrare e diverso da quello in cui il giocatore beve (di solito per motivi igienici)<br>
+                        <p>Inizialmente, il shochu veniva prodotto principalmente a Okinawa, dove si utilizzavano
+                            ingredienti locali come il riso, la canna da zucchero e il patata dolce, a seconda delle
+                            regioni. Con il passare del tempo, la produzione di shochu si diffuse in tutto il Giappone e
+                            si diversificò, portando alla creazione di diverse varietà, come il "muroka" (non filtrato)
+                            e il "honkaku" (single distilled), ognuna con sapori e aromi unici.
+                        </p>
+                        <p>Oggi, il shochu è apprezzato sia in Giappone che all'estero, e viene servito in vari modi:
+                            liscio, con ghiaccio, o come base per cocktail. La sua versatilità, insieme alla varietà
+                            degli ingredienti utilizzati, lo rende un elemento distintivo della cultura gastronomica
+                            giapponese.
                         </p>
                     </div>
                 </div>
                 <div class="modal" id='item_3'>
                     <div class="headermodale">
                         <div>
-                            <p class="titolomodale">Scacchi/Dama alcolica</p>
+                            <p class="titolomodale">kumis/airag/arkhi</p>
+                            <img src="../../immagini/icone/bicchiere-7.svg" alt="">
                         </div>
                     </div>
                     <div class="testomodale">
-                        <p><b>I classici giochi da scacchiera, ma se ti mangiano una pedina ti tocca berla.</b>
+                        <p>Il kumis, conosciuto anche come airag o arakhi, è una bevanda tradizionale fermentata a base
+                            di latte di cavalla, originaria delle popolazioni nomadi delle steppe eurasiatiche, in
+                            particolare delle regioni dell'Asia centrale come Mongolia e Kazakistan.
                         </p>
-                        <p><b>N.giocatori </b>2<br>
-                            <b>Preparativi: </b>2-10 minuti<br>
-                            <b>Durata: </b>15-30 minuti<br>
-                            <b>Equipaggiamento: </b> bevande alcoliche, bicchieri (meglio se shottini), scacchiera e pezzi degli scacchi
-                             o dama (se servono, ma sono consigliati per gli scacchi per la difficoltà nel distinguere i bicchierini)<br>
-                            <b>Preparazione: </b>prima di posizionare i pezzi bisogna distinguerli. Arrangiarsi con bicchieri diversi (anche per colore), 
-                            con bevande diverse (ma anche colorante alimentare), con foglietti disegnati o magari dei sottobicchieri (che per la dama potrebbero 
-                            essere gli stessi pezzi). Se viene complicato usare i pezzi originali.<br>
-                            <b>Regole </b> si seguono le regole standard dei giochi originali, o meglio, quelle scelte prima di giocare, anche una qualunque 
-                            versione alternativa. Nella dama se si stanno utilizzando i bicchieri, il pezzo che viene promosso (diventando appunto “dama”) 
-                            viene posizionato sopra/dentro un altro per distinguerlo dagli altri.<br>
+                        <p>La sua origine risale a pratiche antiche di conservazione del latte e riflette la cultura
+                            pastorale di queste popolazioni. Il latte di cavalla, ricco di nutrienti e facilmente
+                            digeribile, viene fermentato in appositi contenitori, spesso zaini di cuoio, dove i
+                            movimenti durante il viaggio contribuiscono alla fermentazione.
+                        </p>
+                        <p>l kumis ha un sapore caratteristico, leggermente alcolico e fruttato, ed è considerato un
+                            alimento nutriente e ricostituente. Oltre alle sue proprietà gastronomiche, ha un'importanza
+                            culturale rilevante, essendo spesso associato a riti e celebrazioni nella tradizione nomade.
+                            Oggi, il kumis è apprezzato anche al di fuori delle sue terre d'origine, come simbolo di una
+                            cultura milenaria e dell'arte della fermentazione
                         </p>
                     </div>
                 </div>
                 <div class="modal" id='item_4'>
                     <div class="headermodale">
                         <div>
-                            <p class="titolomodale">Non ho mai...</p>
+                            <p class="titolomodale">Mojito Baxeichito</p>
+                            <img src="../../immagini/icone/bicchiere-3.svg" alt="">
                         </div>
                     </div>
                     <div class="testomodale">
-                        <p><b>Probabilmente il più famoso e il più semplice tra i giochi di bevuta</b>
+                        <p>Il Mojito Baxeichito è un cocktail che combina l'autenticità del tradizionale mojito
+                            cubano con influenze moderne e ingredienti innovativi. La sua origine può essere
+                            ricondotta all'isola di Cuba, dove il mojito tradizionale è nato come una bevanda
+                            rinfrescante a base di rum, lime, zucchero di canna, menta e acqua frizzante.
                         </p>
-                        <p><b>N.giocatori </b>+3<br>
-                            <b>Preparativi: </b>0 minuti<br>
-                            <b>Durata: </b>A scelta dei giocatori<br>
-                            <b>Equipaggiamento: </b>qualsiasi bevanda alcolica.<br>
-                            <b>Preparazione: </b>Pulito, croccante, con una dolcezza maltata equilibrata da un amaro delicato e
-                            rinfrescante<br>
-                            <b>Regole </b> A turno ogni giocatore enuncia un'affermazione che comincia con “Non ho mai...” e coloro che hanno compiuto 
-                            quell'azione deve bere. Se nessuno beve il giocatore che ha enunciato la frase deve bere lui stesso.<br>
+                        <p>Il termine "Baxeichito" è un riferimento a una particolare variante di questo classico, che
+                            include ingredienti aggiuntivi come frutta esotica o spezie, rendendo il drink ancora più
+                            unico e vivace. Questa reinterpretazione è diventata popolare in vari bar e locali,
+                            soprattutto nei contesti di mixology creativa, dove i bartender sperimentano con sapori
+                            nuovi per offrire ai clienti esperienze di gusto indimenticabili.
+                        </p>
+                        <p>Il Mojito Baxeichito si distingue per la sua freschezza e il suo carattere giocoso,
+                            rendendolo perfetto per le calde serate estive e le feste in compagnia. Grazie alla sua
+                            versatilità, continua a guadagnare consensi tra gli amanti dei cocktail di tutto il mondo.
                         </p>
                     </div>
                 </div>
                 <div class="modal" id='item_5'>
                     <div class="headermodale">
                         <div>
-                            <p class="titolomodale">Boat race</p>
+                            <p class="titolomodale">Mojito Cubano</p>
+                            <img src="../../immagini/icone/bicchiere-3.svg" alt="">
                         </div>
                     </div>
                     <div class="testomodale">
-                        <p><b>Il nome è in realtà B.O.A.T. Race che sta per “Beer On A Table Race” ovvero "gara di birra su un tavolo".</b>
+                        <p>Il mojito è un cocktail originario di Cuba, le cui radici risalgono al XVI secolo. Si narra
+                            che il drink fosse inizialmente conosciuto come "El Draque", in onore del famoso esploratore
+                            e pirata britannico Sir Francis Drake, che lo preparava con rum, zucchero, lime e menta per
+                            alleviare le febbri tropicali.
                         </p>
-                        <p><b>N.giocatori </b>+4<br>
-                            <b>Preparativi: </b>5 minuti<br>
-                            <b>Durata: </b>+ minuti<br>
-                            <b>Equipaggiamento: </b>molti bicchieri (uguali) di birra.<br>
-                            <b>Preparazione: </b>disporre due gruppi di bicchieri di egual numero, riempiti con la stessa quantità di birra. 
-                            Dividere i giocatori in due squadre e ognuna dovrà decidere un ordine interno tra i membri. <br>
-                            <b>Regole </b> le squadre dovranno bere in serie i loro bicchieri di birra, provando a finire prima dell'altra squadra.
-                             Quando inizia la gara, il primo giocatore di ogni squadra può prendere un bicchiere e cominciarne a bere il contenuto. 
-                             Una volta terminato, deve porre il bicchiere al contrario sopra la propria testa, così da dimostrare di non aver barato.
-                              Il giocatore seguente a questo punto può a sua volta prendere il proprio bicchiere e cominciare a bere, e così via. La 
-                              prima squadra che beve tutto vince il gioco.<br>
+                        <p>Con il passare del tempo, la ricetta si è evoluta e il cocktail ha assunto il nome di
+                            "mojito". Nel XIX secolo, guadagnò popolarità a L'Avana, dove divenne il preferito tra
+                            scrittori e artisti, tra cui Ernest Hemingway. La freschezza degli ingredienti, come il lime
+                            e la menta, lo ha reso un drink rinfrescante e ideale per il clima caldo dell'isola.
                         </p>
-                    </div>
-                </div>
-                <div class="modal" id='item_6'>
-                    <div class="headermodale">
-                        <div>
-                            <p class="titolomodale">Gioco del drago</p>
-                        </div>
-                    </div>
-                    <div class="testomodale">
-                        <p><b>Versione allegra del più comune gioco dell’oca.</b>
-                        </p>
-                        <p><b>N.giocatori </b>minimo 2<br>
-                            <b>Preparativi: </b>5 minuti<br>
-                            <b>Durata: </b>20-50 minuti<br>
-                            <b>Equipaggiamento: </b>un paio di dadi (da 6 facce), un tabellone (potete scaricarlo...),  bevande alcoliche<br>
-                            <b>Preparazione: </b>stampare il tabellone oppure disegnarlo e scriverlo da se.<br>
-                            <b>Regole </b> ogni giocatore nel suo turno tira i dadi e verrà applicato il compito scritto nella casella in cui è finito<br>
-                        </p>
-                    </div>
-                </div>
-                <div class="modal" id='item_7'>
-                    <div class="headermodale">
-                        <div>
-                            <p class="titolomodale">Battaglia navale alcolica</p>
-                        </div>
-                    </div>
-                    <div class="testomodale">
-                        <p><b>Uguale al gioco classico, ma ogni volta che un giocatore colpisce una delle navi dell’avversario, questo deve bere un sorso. </b>
-                        </p>
-                        <p><b>N.giocatori </b>2<br>
-                            <b>Preparativi: </b>5 minuti<br>
-                            <b>Durata: </b>5-10 minuti<br>
-                            <b>Equipaggiamento: </b>bevande alcoliche, qualunque elemento essenziale per giocare a battaglia navale (se si vuole crearne un 
-                            tabellone da se, procurarsi dei bicchieri, meglio se shottini e della carta su cui disegnare le 2 o 4 griglie e qualcosa per separare)<br>
-                            <b>Preparazione: </b>se serve, disegnare o stampare le griglie (consiglio 8x8) e posizionare qualcosa tra esse per non far vedere 
-                            la mappa avversaria ai due giocatori. Se le griglie sono abbastanza grandi, si possono usare dei bicchieri/shottini pieni della bevanda,
-                             come pedine che sostituiranno le navi. Inoltre altre due griglie si possono utilizzare per segnare le zone colpite.<br>
-                            <b>Regole </b> all’inizio i due giocatori dovranno posizionare le navi (o bicchieri), in modo che rispettino il numero e le 
-                            dimensioni delle navi che si sono stabilite (consiglio una lunga 4, una lunga 3, una lunga 2 e l’ultima formata da una singola unità). 
-                            Se si vuole, tutte le navi potrebbero essere anche formate da una singola unità. A turni i due giocatori cercheranno di indovinare la 
-                            posizione delle navi nemiche, dicendo le coordinate (tipo B-7) e se andranno a segno l’avversario dovrà bere lo shottino. Inoltre di 
-                            solito vengono aggiunte anche queste 2 regole :
-                            Le navi non si possono toccare
-                            Il turno del giocatore finisce quando sbaglia, quindi se colpisce una nave nemica può tentare di nuovo.<br>
-                            <b>Vittoria: </b> vince chi affonda tutte le navi nemiche.
-                        </p>
-                    </div>
-                </div>
-                <div class="modal" id='item_8'>
-                    <div class="headermodale">
-                        <div>
-                            <p class="titolomodale">Re/Cerchio della morte</p>
-                        </div>
-                    </div>
-                    <div class="testomodale">
-                        <p><b>Gioco di carte in cui giocatori devono bere, far bere o far accadere eventi divertenti in base alle carte pescate.</b>
-                        </p>
-                        <p><b>N.giocatori </b>4-52<br>
-                            <b>Preparativi: </b>5-10 minuti (per decidere o leggere le regole)<br>
-                            <b>Durata: </b>20-50 minuti<br>
-                            <b>Equipaggiamento: </b>un mazzo di carte da poker, un bicchiere/contenitore (coppa del re) possibilmente grande, 
-                            bevande alcoliche, un bicchiere per ogni partecipante.<br>
-                            <b>Preparazione: </b>posizionare la “coppa del re” al centro del tavolo e mescolare il mazzo di carte e posizionarlo, 
-                            coperto, accanto al coppa (oppure distribuire le carte in cerchio attorno alla coppa).<br>
-                            <b>Regole </b> in senso orario ogni giocatore pescherà una carta e dopo aver applicato la sua regola, verrà scartata. Ogni carta
-                             ha una propria regola predeterminata prima dell'inizio del gioco. Si possono anche stabilire delle proprie varianti. Regole proposte:<br> 
-                            <ul>
-                                <li>
-                                    <b>Asso (cascata):</b> si simula una cascata tra tutti i giocatori, infatti tutti dovranno iniziare a bere la loro bevanda
-                                     contemporaneamente. Nessun giocatore può smettere di bere finché il giocatore alla sua sinistra non si ferma (in alcune versioni
-                                      finche chi ha pescato non smette). <br>
-                                </li>
-                                <li>
-                                    <b>2 (categoria):</b> Il giocatore sceglie una categoria, e i giocatori  in senso orario nominano le cose che rientrano 
-                                    nella categoria. La prima persona che non riesce a trovare qualcosa che non è stato detto deve bere. <br>
-                                </li>
-                                <li>
-                                    <b>3 (rima):</b> Il giocatore dice una parola, e i giocatori procedono in senso orario dicendo una parola che fa rima con l'originale. 
-                                    La prima persona che non riesce a trovare una parola che faccia rima e che non sia stata usata deve bere. <br>
-                                </li>
-                                <li>
-                                    <b>4 (Question Master):</b> il giocatore diventa il “Question Master”, quindi se qualcuno risponde alle sue domande deve bere. 
-                                    Questo giocatore mantiene il titolo finché un altro giocatore pesca un 4. <br>
-                                </li>
-                                <li>
-                                    <b>5 (Pollici):</b> Il giocatore mette il pollice sul bordo del tavolo e tutti gli altri giocatori sono obbligati a fare lo stesso.
-                                     L’ultimo a farlo deve beve. <br>
-                                </li>
-                                <li>
-                                    <b>6 (Io non ho mai):</b> il giocatore che ha pescato la carta dirà "Non ho mai ...". Chiunque abbia compiuto l'azione deve bere. <br>
-                                </li>
-                                <li>
-                                    <b>7 (paradiso):</b> l'ultima persona ad alzare la mano deve bere. <br>
-                                </li>
-                                <li>
-                                    <b>8 (compagno):</b> il giocatore sceglie una persona come tuo compagno e lui/lei berrà quando tu bevi, e viceversa, per il resto della
-                                     partita. Se uno dei compagni pesca un'altra carta da 8, sceglie un altro giocatore e ora tutti e tre devono bere. Puoi anche unire due 
-                                     coppie accoppiate in questo modo. Nel caso di bevuta simultanea dei giocatori legati “dalla regola del compagno” causato dallo stesso 
-                                     motivo <br>
-                                </li>
-                                <li>
-                                    <b>9 (pavimento):</b> L'ultima persona a toccare il pavimento con le mani deve bere.  <br>
-                                </li>
-                                <li>
-                                    <b>10 (Inventa una regola):</b> il giocatore potrà inventare una regola di sana pianta, che poi si applicherà per il resto del gioco. 
-                                    Chi non rispetta la regola (o le altre) deve bere. Ecco alcuni suggerimenti: <br>
-                                    <b>Tutti si chiamano Sandro, non puoi chiamare qualcun altro con un altro nome;</b> <br>
-                                    <b>Non usare qualunque derivazione del verbo “Bere”;</b> <br>
-                                    <b>Ogni volta che si beve bisogna esclamare una parola;</b>
-                                </li>
-                                <li>
-                                    <b>J (fante):</b> tutti i ragazzi devono bere. <br>
-                                </li>
-                                <li>
-                                    <b>Q (regina):</b> tutte le ragazze devono bere. <br>
-                                </li>
-                                <li>
-                                    <b>K (coppa del re):</b> Ogni re che ha pescato la carta mette un po' del suo drink nella Coppa del Re (1/4 della bevanda)
-                                     al centro del tavolo. Il 4° Re (dopo aver aggiunto) deve bere il contenuto della Coppa del  <br>
-                                </li>
-                                <li>
-                                    <b>Jolly:</b> Nel tal caso nel vostro mazzo abbiate inserito anche questa carta, essa potrà essere qualunque delle restanti 13, a seconda
-                                     del volere del giocatore che ha pescato, che dovrà dichiarare ad alta voce a quale carta (o regola) dovrà corrispondere. <br>
-                                </li>
-                            </ul>
-                        </p>
-                    </div>
-                </div>
-                <div class="modal" id='item_9'>
-                    <div class="headermodale">
-                        <div>
-                            <p class="titolomodale">Mr.tree</p>
-                        </div>
-                    </div>
-                    <div class="testomodale">
-                        <p><b>Mr. Three, chiamato anche Three man è un gioco di dadi, che può essere giocato con almeno tre persone, 
-                            ma alcuni lo considerano migliore con circa cinque. </b>
-                        </p>
-                        <p><b>N.giocatori </b>minimo 3<br>
-                            <b>Preparativi: </b>1 minuto<br>
-                            <b>Durata: </b>Variabile<br>
-                            <b>Equipaggiamento: </b>qualsiasi bevanda alcolica, un paio die dadi (a 6 facce), possibilmente dei bicchieri per i giocatori<br>
-                            <b>Preparazione: </b>sistemarsi attorno a un tavolo<br>
-                            <b>Regole </b> all’inizio del gioco decidere a caso un giocatore che assuma per primo il ruolo di mr. Three. Il giocatore
-                             con questo ruolo tirerà i dadi e verranno seguite delle istruzioni asseconda del risultato ottenuto. Le regole che stabiliscono
-                             i seguenti effetti:<br>
-                             <ul>
-                                <li>
-                                    <b>Tre:</b> Per un tiro che totalizza 3, o mostra 3 su uno dei suoi dadi, i tre giocatori devono bere. <br>
-                                </li>
-                                <li>
-                                    <b>sette:</b> Per ogni tiro che totalizza 7, la persona alla sinistra del lanciatore beve. Nel caso di un 3-4,
-                                     anche la regola precedente si attiva, quindi anche mr. Three deve bere. <br>
-                                </li>
-                                <li>
-                                    <b>dieci:</b> Ogni tiro che totalizza 10 è chiamato "sociale". Tutti i giocatori bevono. <br>
-                                </li>
-                                <li>
-                                    <b>undici:</b> Per ogni tiro che totalizza 11, la persona alla destra del lanciatore beve <br>
-                                </li>
-                                <li>
-                                    <b>doppie:</b> Ogni volta che viene tirato un doppio, il lanciatore può passare i dadi a un altro giocatore, 
-                                    che tirano i dadi e applicano il risultato (mr. Three momentaneo). Se questo risulta in un altro doppio, il 
-                                    lanciatore originale deve bere la somma dei dadi.
-                                </li>
-                                <li>
-                                    <b>nullo:</b> Se un tiro non soddisfa nessuno dei criteri, il ruolo del mr. Three passa al prossimo giocatore in senso orario.
-                                </li>
-                             </ul>
-                        </p>
-                    </div>
-                </div>
-                <div class="modal" id='item_10'>
-                    <div class="headermodale">
-                        <div>
-                            <p class="titolomodale">Patruni e sutta</p>
-                        </div>
-                    </div>
-                    <div class="testomodale">
-                        <p><b>Gioco di carte e bevute in cui scopo è quello di bere e far andare "olmo" l'avversario pagando il meno possibile le bevande.
-                             In questo gioco, diffuso principalmente nell’Italia meridionale, in modo diverso da molti altri giochi alcolici, “bere” è un premio </b>
-                        </p>
-                        <p><b>N.giocatori </b>minimo 2<br>
-                            <b>Preparativi: </b>2 minuti<br>
-                            <b>Durata: </b>illimitata <br>
-                            <b>Equipaggiamento: </b>mazzo di carte di scopa;  bottiglie di bevande alcoliche (di solito birre) una ogni due giocatori 
-                            (caso di 2 giocatori è 1, nel caso di 4 giocatori sono 2 e nel caso di 6 giocatori sono 3...) ; bicchieri (uno a giocatore);<br>
-                            <b>Regole </b> Ssssss
+                        <p>Oggi, il mojito è apprezzato in tutto il mondo, simbolo della cultura cubana e della sua
+                            vivace tradizione di miscelazione.
                         </p>
                     </div>
                 </div>
@@ -490,11 +318,11 @@
                     <a href="../seccchi/secchi.html">Secchi</a>
                     <a href="../cocktail/cocktail.html">Cocktail</a>
                 </div>
-                <a href="../bevi-responsabilmente.html" class="testophonebanner">Bevi Responsabilmente</a></li>
+                <a href="../pagine singole/bevi-responsabilmente.html" class="testophonebanner">Bevi Responsabilmente</a></li>
                 <div class="testophonebanner">
                     <a href="../extra/curiosità.html">Curiosità</a>
                     <a href="../extra/giochi.html">Giochi</a>
-                    <a href="" id="random">Random Drink</a>
+                    <a href="#" id="random" class="random" onclick="changeLink()">Random Drink</a>
                 </div>
             </div>
         </section>
@@ -508,8 +336,8 @@
             <nav>
                 <ul>
                     <!--da aggiungere i link-->
-                    <li><a href="../chi-siamo.html">Chi siamo</a></li>
-                    <li><a href="../info.html">Info</a></li>
+                    <li><a href="../pagine singole/chi-siamo.html">Chi siamo</a></li>
+                    <li><a href="../pagine singole/info.html">Info</a></li>
                 </ul>
             </nav>
         </section>

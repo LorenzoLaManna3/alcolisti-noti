@@ -21,6 +21,8 @@
     --fontbold: 700;
     --h1size: 50px;
     /* è 78 su figma - Usato anche per le card con immagini */
+    --cardtextsize: 34px;
+    /* questo valore non viene usato con media query minori */
     --h3size: 27px;
     /* 40 su figma */
     --textsize: 16px;
@@ -51,6 +53,7 @@ h1,
 h2,
 h3,
 a,
+li,
 .text {
     font-family: 'General Sans', sans-serif;
     margin: 0 0;
@@ -101,6 +104,9 @@ li {
     unicode-bidi: isolate;
     position: relative;
     /*per far funzionare l'absolute del banner sottostante */
+    font-size: var(--textsize);
+    font-weight: var(--fontmedium);
+    line-height: var(--lineheight);
 }
 
 header a,
@@ -200,7 +206,7 @@ li:hover .banner {
 .testohero {
     height: 100%;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 h1,
@@ -261,13 +267,18 @@ h2 {
     /* per rendere invisibile la parte dell'immagine non interna al div */
 }
 
+.gradienthero {
+    z-index: 2;
+    display: none;
+    background: linear-gradient(90deg, rgb(0, 0, 0) -5%, rgba(0, 0, 0, 0) 100%);
+}
+
 .sfondohero img {
     object-fit: cover;
     height: 100%;
     width: 100%;
     object-position: center center;
     transform-origin: center;
-    object-position: center;
     /* Centra l'immagine */
     display: block;
 }
@@ -335,7 +346,7 @@ h3 {
     aspect-ratio: 1 / 1.5;
     /* ASPECT RATIO DA DECIDERE, (OPPURE DECIDERE UN ALTEZZA FISSA, anche in base allo scherm0) */
     position: relative;
-    /* senza questo (position:relative) non funzionerebbe la posizione absolute del testo è relativa in termnini di top-left alla card e non all'intera pagina */
+    /* senza questo (position:relative) non funzionerebbe la posizione absolute del testo relativa in termnini di top-left alla card e non all'intera pagina */
 }
 
 
@@ -351,6 +362,7 @@ h3 {
     transform: scale(1, 1);
     transition: 1500ms;
     transform-origin: center;
+    aspect-ratio: 1 / 1.5;
 }
 
 .rigacards img {
@@ -381,7 +393,7 @@ h3 {
     color: var(--color1);
     width: 100%;
     z-index: 3;
-    font-size: var(--h1size);
+    font-size: var(--cardtextsize);
     font-weight: var(--fontbold);
     text-transform: uppercase;
 }
@@ -451,22 +463,26 @@ h3 {
 
 .modals {
     flex-shrink: 0;
-    width: 500px;
+    height: 80vh;
     aspect-ratio: 1 / 1;
+    display: flex;
+    /* basterrebbe block, ma insieme a column e pi flex1 nella modal, non auamenta l'altezza della modale */
+    flex-direction: column;
 }
 
 .modal {
     display: none;
-    z-index: 6;
     background-color: var(--color1);
-    height: 100%;
     border-radius: var(--bordradius1);
     padding: 16px 16px;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-    flex-shrink: 0;
-    /* da controllare */
+    flex: 1;
+    /* per occupare tutto lo spazio in altezza (perchè c'è collum) */
+    overflow: hidden;
+    overflow-y: auto;
+    /* per permettere lo scorrimento verso il basso con una scrollbar (o con touch screen al telefono) */
 }
 
 
@@ -486,7 +502,6 @@ h3 {
     align-items: center;
     /*per allineare al testo */
     gap: 16px;
-    border-radius: var(--bordradius1);
 }
 
 .titolomodale {
@@ -514,7 +529,9 @@ h3 {
     align-self: stretch;
 }
 
-.testomodale p {
+.testomodale p,
+.testomodale li {
+    /* "li" per l'elenco puntato */
     align-self: stretch;
     color: var(--color3);
     font-size: var(--modaletextsize);
@@ -522,6 +539,27 @@ h3 {
     line-height: var(--lineheight);
     /*
     text-transform: uppercase;*/
+}
+
+/* scrollbar personalizzata della modale se presente ( in Safari e firefox non cambia?) */
+
+.modal::-webkit-scrollbar {
+    /* scrollbar intera */
+    width: 10px;
+    /* largezza scrollbar */
+    background-color: rgba(0, 0, 0, 0);
+    /* sfondo della scroll bar : invisibile */
+}
+
+.modal::-webkit-scrollbar-track {
+    /* barra di scrorrimento (Track in inglese) */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.modal::-webkit-scrollbar-thumb {
+    /* barra interna che scorre (Thumb) */
+    border-radius: var(--bordradius1);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Pulsanti pre next e next*/
@@ -535,9 +573,9 @@ h3 {
 
 .closeplusnext {
     display: flex;
-    height: 500px;
-    /*uguale alla modale !!!*/
-    padding: 16px 0px;
+    height: calc(80vh - (16px * 2));
+    /*uguale alla modale meno 32(potrebbe cambiare) */
+    /* stranamente con "padding: 16px 0px" fuoriesce da height */
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
@@ -546,7 +584,8 @@ h3 {
 .pre,
 .next,
 .close,
-.closebanner {
+.closebanner,
+.fintoclose {
     display: flex;
     width: 20px;
     height: 20px;
@@ -639,10 +678,12 @@ h3 {
 .gradient {
     width: 122px;
     height: 25px;
+    border-radius: var(--bordradius1);
 }
 
 .grchiare1 {
     background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #BB8700 100%);
+
 }
 
 .grchiare2 {
@@ -682,6 +723,64 @@ h3 {
     background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #BB8700 100%);
 }
 
+.grambrate1 {
+    background: linear-gradient(90deg, #F45D14 0%, #FF8A00 50%, #D36805 100%);
+}
+
+.grambrate2 {
+    background: linear-gradient(90deg, #F9BB1C 0%, #FF4D00 50%, #EB4600 100%);
+}
+
+.grambrate3 {
+    background: linear-gradient(90deg, #511800 0%, #790000 50%, #B00 100%);
+}
+
+.grambrate4 {
+    background: linear-gradient(90deg, #000 0%, #633002 50%, #3E2D00 100%);
+    /*background: linear-gradient(90deg, #4D1C00 0%, #371400 50%, #000 100%);*/
+}
+
+.grambrate5 {
+    background: linear-gradient(90deg, #F45D14 0%, #D36805 50%, #B30000 100%);
+    /*background: linear-gradient(90deg, #F45D14 0%, #EE2B00 50%, #D90000 100%);*/
+}
+
+.grambrate6 {
+    background: linear-gradient(90deg, #6D3B00 0%, #900 50%, #DB0202 100%);
+}
+
+.grambrate7 {
+    background: linear-gradient(90deg, #E46325 0%, #953100 50.5%, #682200 100%);
+}
+
+.grambrate8 {
+    background: linear-gradient(90deg, #4D1C00 0%, #371400 50%, #000 100%);
+}
+
+.grambrate9 {
+    background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #FF6201 100%);
+}
+
+.grambrate10 {
+    background: linear-gradient(0deg, #BB8700 0%, #BB8700 100%);
+}
+
+.grambrate11 {
+    background: linear-gradient(90deg, #BB8700 0%, #750 50%, #513A00 100%);
+}
+
+.grambrate12 {
+    background: linear-gradient(0deg, #F91C1C 0%, #F91C1C 100%);
+}
+
+.grambrate13 {
+    background: linear-gradient(90deg, #852800c9 0%, #652500 50%, #3B1500 100%);
+}
+
+.grambrate14 {
+    background: linear-gradient(90deg, #C74000 0%, #A04300 50%, #342600 100%);
+}
+
 /* responsive */
 
 @media (max-width:600px) {
@@ -691,6 +790,18 @@ h3 {
 
     header nav {
         display: none;
+    }
+
+    .specialtitolohero1 {
+        font-size: 28px;
+    }
+
+    .specialtitolohero2 {
+        font-size: 36px;
+    }
+
+    .gradienthero {
+        display: block;
     }
 
     .sfondohero img {
@@ -714,7 +825,8 @@ h3 {
         flex: 1 !important;
     }
 
-    .card:focus img, .card:active img {
+    .card:focus img,
+    .card:active img {
         transform: scale(1.10);
         transition-duration: 750ms;
         overflow: hidden;
@@ -723,14 +835,40 @@ h3 {
 
     .modals {
         width: 75vw;
+        /*500px =troppo piccolo */
         aspect-ratio: 1 / 2;
+        max-height: 90%;
+        /*per non far fuoriuscire la modal in vertiacle */
+        height: auto;
+        /* per annullare il valore fisso (in vh) */
     }
 
     .closeplusnext {
         height: calc(75vw * 2);
+        /* come l'altezza della modale, che è il doppio della largezza */
+        max-height: calc(90vh - (16px * 2));
+        /* come la modale */
     }
 
     .gradient {
         width: 50px;
+    }
+}
+
+/* @media query per sistemare alcune cose */
+
+
+
+@media (min-width:801px) and (max-width:1000px) {
+    .testocard {
+        /*per sistemare la largezza per non farlo uscire dalla card */
+        font-size: var(--h3size);
+    }
+}
+
+@media (min-width:601px) and (max-width:800px) {
+    .testocard {
+        /*per sistemare la largezza per non farlo uscire dalla card */
+        font-size: var(--textsize);
     }
 }
