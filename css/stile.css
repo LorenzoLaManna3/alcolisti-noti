@@ -60,7 +60,7 @@ li,
 }
 
 b {
-    font-weight: 700;
+    font-weight: var(--fontbold);
 }
 
 /* header e footer */
