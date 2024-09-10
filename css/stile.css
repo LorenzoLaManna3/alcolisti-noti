@@ -555,6 +555,10 @@ h4 {
     text-transform: uppercase;*/
 }
 
+.testomodale ul {
+    margin: 0 0;
+}
+
 /* scrollbar personalizzata della modale se presente ( in Safari e firefox non cambia?) */
 
 .modal::-webkit-scrollbar {
