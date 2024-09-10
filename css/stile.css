@@ -314,12 +314,12 @@ h3 {
     text-transform: uppercase;
 }
 
-.specialh3{
+.specialh3 {
     padding-top: var(--gap1);
 }
 
 h4 {
-    padding-top:var(--gap1);
+    padding-top: var(--gap1);
     font-size: var(--h4size);
     font-weight: var(--fontbold);
     text-transform: uppercase;
@@ -876,7 +876,12 @@ h4 {
 
 /* @media query per sistemare alcune cose */
 
-
+@media (min-width:1500px) {
+    .testomodale p,
+    .testomodale li {
+        font-size: var(--h4size);
+    }
+}
 
 @media (min-width:801px) and (max-width:1000px) {
     .testocard {
