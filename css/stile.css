@@ -757,8 +757,8 @@ h4 {
 }
 
 .grambrate4 {
-    background: linear-gradient(90deg, #000 0%, #633002 50%, #3E2D00 100%);
-    /*background: linear-gradient(90deg, #4D1C00 0%, #371400 50%, #000 100%);*/
+    /* background: linear-gradient(90deg, #000 0%, #633002 50%, #3E2D00 100%); */
+    background: linear-gradient(90deg, #000 0%, #5C3700 50%, #442901 100%);
 }
 
 .grambrate5 {
@@ -800,6 +800,27 @@ h4 {
 
 .grambrate14 {
     background: linear-gradient(90deg, #C74000 0%, #A04300 50%, #342600 100%);
+    /*background: linear-gradient(90deg, #FF5402 0%, #A04300 50%, #4D3801 100%);*/
+}
+
+.grscure1 {
+    background: linear-gradient(90deg, #FFB800 0%, #FF8A00 50.5%, #F00 100%);
+}
+
+.grscure2 {
+    background: linear-gradient(90deg, #750 0%, #513A00 50%, #000 100%);
+}
+
+.grscure3 {
+    background: linear-gradient(0deg, #37342C 0%, #37342C 100%);
+}
+
+.grscure4 {
+    background: linear-gradient(0deg, #000 0%, #000 100%);
+}
+
+.grscure5 {
+    background: linear-gradient(90deg, #FFE297 0%, #8E5E00 50%, #FF1F00 100%);
 }
 
 /* responsive */
