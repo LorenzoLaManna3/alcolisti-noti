@@ -276,6 +276,8 @@ h2 {
     z-index: 2;
     display: none;
     background: linear-gradient(90deg, rgb(0, 0, 0) -5%, rgba(0, 0, 0, 0) 100%);
+    height: calc(100% + 4px);
+    /* ho aggiunto qualche pixel siccomene si vede una linea che non copre in alto */
 }
 
 .sfondohero img {
