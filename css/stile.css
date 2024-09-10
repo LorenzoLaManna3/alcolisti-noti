@@ -13,6 +13,8 @@
     /* su figma 120*/
     --gap1: 20px;
     /* gap delle card */
+    --gap2: 16px;
+    /*gap dele modali e banner*/
     --realviewidth: calc(100vw - (100vw - 100%));
     /*questo valore è uguale al valore 100% width che ha body, non usarlo per sottofigli */
     --transitionIN1: 1500ms;
@@ -141,7 +143,7 @@ li:hover .banner {
 .banner {
     display: none;
     position: absolute;
-    top: calc(100% + 16px);
+    top: calc(100% + var(--gap2));
     /*questo valore si / può modicare */
     left: 50%;
     transform: translateX(-50%);
@@ -173,10 +175,10 @@ li:hover .banner {
     gap: var(--horizontalpadding);
     background-color: var(--color1);
     display: inline-flex;
-    padding: 16px 16px;
+    padding: var(--gap2) var(--gap2);
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: var(--gap2);
     border-radius: var(--bordradius1);
 }
 
@@ -439,7 +441,7 @@ h4 {
 }
 
 .sottocategorie p {
-    padding: 16px;
+    padding: var(--gap2);
     color: var(--color3);
     font-size: var(--textsize);
     font-weight: var(--fontbold);
@@ -466,7 +468,7 @@ h4 {
     background-color: var(--color3);
     justify-content: center;
     align-items: center;
-    gap: 0 16px;
+    gap: 0 var(--gap2);
 }
 
 .showcompletemodal {
@@ -488,10 +490,10 @@ h4 {
     display: none;
     background-color: var(--color1);
     border-radius: var(--bordradius1);
-    padding: 16px 16px;
+    padding: var(--gap2) var(--gap2);
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: var(--gap2);
     flex: 1;
     /* per occupare tutto lo spazio in altezza (perchè c'è collum) */
     overflow: hidden;
@@ -509,13 +511,14 @@ h4 {
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
+    gap: var(--gap2);
 }
 
 .headermodale div {
     display: flex;
     align-items: center;
     /*per allineare al testo */
-    gap: 16px;
+    gap: var(--gap2);
 }
 
 .titolomodale {
@@ -539,7 +542,7 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: var(--gap2);
     align-self: stretch;
 }
 
@@ -591,7 +594,7 @@ h4 {
 
 .closeplusnext {
     display: flex;
-    height: calc(80vh - (16px * 2));
+    height: calc(80vh - (var(--gap2) * 2));
     /*uguale alla modale meno 32(potrebbe cambiare) */
     /* stranamente con "padding: 16px 0px" fuoriesce da height */
     flex-direction: column;
@@ -869,7 +872,7 @@ h4 {
     .closeplusnext {
         height: calc(75vw * 2);
         /* come l'altezza della modale, che è il doppio della largezza */
-        max-height: calc(90vh - (16px * 2));
+        max-height: calc(90vh - (var(--gap2) * 2));
         /* come la modale */
     }
 
