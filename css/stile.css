@@ -519,6 +519,9 @@ h4 {
     align-items: center;
     /*per allineare al testo */
     gap: var(--gap2);
+    flex: 1;
+    /* per occcupare tutto il resto dello spazio lasciato dal grandient (che ha ha flex = none) */
+    justify-content: space-between;
 }
 
 .titolomodale {
@@ -700,6 +703,8 @@ h4 {
     width: 122px;
     height: 25px;
     border-radius: var(--bordradius1);
+    flex: none !important;
+    /*perchè headermodale div ha flex = 1*/
 }
 
 .grchiare1 {
@@ -905,6 +910,7 @@ h4 {
 /* @media query per sistemare alcune cose */
 
 @media (min-width:1500px) {
+
     .testomodale p,
     .testomodale li {
         font-size: var(--h4size);
