@@ -45,6 +45,7 @@ main {
     margin: 0 auto;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    z-index: 1;
 }
 
 body:-webkit-any-link {
@@ -74,7 +75,7 @@ header,
 footer {
     width: var(--realviewidth);
     position: relative;
-    z-index: 2;
+    z-index: 4; /* più alto del testo dell'hero così il banner non viene coperto dal titolo */
 }
 
 footer {
@@ -95,7 +96,6 @@ footer section {
 
 nav {
     display: block;
-    unicode-bidi: isolate;
 }
 
 nav ul {
@@ -106,7 +106,6 @@ nav ul {
 
 li {
     display: list-item;
-    unicode-bidi: isolate;
     position: relative;
     /*per far funzionare l'absolute del banner sottostante */
     font-size: var(--textsize);
@@ -186,11 +185,11 @@ li:hover .banner {
 .phonebanner a {
     font-size: var(--textsize);
     color: var(--color3);
+    opacity: 100%; /* per distinguerlo dal "a" del header */
 }
 
 .banner div a:hover,
 .phonebanner a:hover {
-    font-size: var(--textsize);
     color: var(--color2);
 }
 
@@ -222,6 +221,8 @@ h2 {
 .testohero h1,
 .sottotitolohero {
     position: absolute;
+    max-width: calc(var(--realviewidth) - (var(--horizontalpadding) * 2));
+    /* per limitare la dimensione quando lo schermo è piccolo */
 }
 
 .testohero h1 {
@@ -486,6 +487,8 @@ h4 {
     display: flex;
     /* basterrebbe block, ma insieme a column e pi flex1 nella modal, non auamenta l'altezza della modale */
     flex-direction: column;
+    max-width: 80vw;
+    /*per manternerlo dentro la finestra, soluzione per i tablet */
 }
 
 .modal {
@@ -974,6 +977,10 @@ h4 {
         /* per annullare il valore fisso (in vh) */
     }
 
+    .titolomodale {
+        font-size: var(--h4size);
+    }
+
     .closeplusnext {
         height: calc(75vw * 2);
         /* come l'altezza della modale, che è il doppio della largezza */
@@ -996,23 +1003,61 @@ h4 {
     }
 }
 
-@media (min-width:801px) and (max-width:1000px) {
+@media (min-width:800px) and (max-width:1000px) {
     .testocard {
         /*per sistemare la largezza per non farlo uscire dalla card */
         font-size: var(--h3size);
     }
 }
 
-@media (min-width:601px) and (max-width:800px) {
+@media (min-width:600px) and (max-width:800px) {
     .testocard {
         /*per sistemare la largezza per non farlo uscire dalla card */
         font-size: var(--textsize);
     }
 }
 
-@media (max-width:375px) {
+@media (max-width:415px) {
+    .headermodale, .headermodale div {
+        gap: calc(var(--gap2) / 2);
+    }
+
+    .titolomodale {
+        font-size: var(--h4size);
+    }
+}
+
+@media (max-width:385px) {
+    .completemodal {
+        gap: 0 calc(var(--gap2) / 2);
+    }
+
+    .titolomodale {
+        font-size: var(--textsize);
+    }
+
     .testocard {
         /*per sistemare la largezza per non farlo uscire dalla card */
         font-size: var(--h3size);
+    }
+
+    .gradient {
+        width: 35px;
+    }
+
+    .specialtitolohero1 {
+        font-size: 24px;
+    }
+}
+
+/* orizzontale telefono*/
+
+@media (max-height:520px) {
+    .testohero h1 {
+        top: 20px;
+    }
+
+    .sottotitolohero {
+        top: 140px;
     }
 }
