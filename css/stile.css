@@ -911,6 +911,14 @@ h4 {
     background: #03C3FF;
 }
 
+.grpes1 {
+    background: linear-gradient(270deg, #00D709 0%, #FFE8AC 59.5%);;
+}
+
+.grpes2 {
+    background: linear-gradient(270deg, #00D709 0%, #845F00 59.5%);
+}
+
 /* responsive */
 
 @media (max-width:600px) {
