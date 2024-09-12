@@ -867,7 +867,8 @@ h4 {
 }
 
 .grpre10 {
-    background: #FFF1CC;
+    /*background: #FFF1CC;*/
+    background: linear-gradient(0deg, #FFE8AC 0%, #FFE8AC 100%);
 }
 
 .grpre11 {
