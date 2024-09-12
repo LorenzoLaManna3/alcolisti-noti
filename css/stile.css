@@ -911,6 +911,30 @@ h4 {
     background: #03C3FF;
 }
 
+.grafter1 {
+    background: #965A00;
+}
+
+.grafter2 {
+    background: #D37F00;
+}
+
+.grafter3 {
+    background: linear-gradient(90deg, #D37F00 0%, #FFF 100%);
+}
+
+.grafter4 {
+    background: linear-gradient(90deg, #F00 0%, #FFEFC7 50%, #FAD200 100%);
+}
+
+.grafter5 {
+    background: linear-gradient(0deg, #ff83f39e 0%, #ff83f39e 100%);
+}
+
+.grafter6 {
+    background: linear-gradient(0deg, #FF004C 0%, #FF004C 100%);
+}
+
 .grpes1 {
     background: linear-gradient(270deg, #00D709 0%, #FFE8AC 59.5%);;
 }
