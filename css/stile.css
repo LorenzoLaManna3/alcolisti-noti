@@ -27,7 +27,7 @@
     /* 40 su figma */
     --h4size: 20px;
     /* 32 su figma */
-    --textsize: 16px;
+    --textsize: 18px;
     /*24 su figma */
     --modaletextsize: 14px;
     /* 16 su figma */
@@ -697,7 +697,6 @@ h4 {
 
 .grchiare1 {
     background: linear-gradient(90deg, #FFE297 0%, #F9BB1C 50%, #BB8700 100%);
-
 }
 
 .grchiare2 {
